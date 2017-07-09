@@ -1,0 +1,11 @@
+[Unit]
+Description=Ubiq Miner
+After=network.target
+
+[Service]
+User=www-data
+ExecStart=/nvezos/scripts/miners/ubiq.sh
+
+[Install]
+WantedBy=multi-user.target
+

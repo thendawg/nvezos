@@ -1,0 +1,11 @@
+[Unit]
+Description=Eth Miner
+After=network.target
+
+[Service]
+User=www-data
+ExecStart=/nvezos/scripts/miners/eth.sh
+
+[Install]
+WantedBy=multi-user.target
+

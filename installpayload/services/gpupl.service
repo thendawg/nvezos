@@ -1,0 +1,13 @@
+[Unit]
+Description=Setting GPU Power Limit
+After=network.target	
+
+[Service]
+User=root
+ExecStart=/nvezos/scripts/gpu/pl.sh
+RemainAfterExit=yes
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
+

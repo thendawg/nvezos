@@ -1,0 +1,13 @@
+[Unit]
+Description=Setting GPU Fan Speed
+After=network.target	
+
+[Service]
+User=www-data
+ExecStart=/nvezos/scripts/gpu/fan.sh
+RemainAfterExit=yes
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
+

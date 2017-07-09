@@ -1,0 +1,11 @@
+[Unit]
+Description=Music Miner
+After=network.target
+
+[Service]
+User=www-data
+ExecStart=/nvezos/scripts/miners/music.sh
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,11 @@
+[Unit]
+Description=EXP Miner
+After=network.target
+
+[Service]
+User=www-data
+ExecStart=/nvezos/scripts/miners/exp.sh
+
+[Install]
+WantedBy=multi-user.target
+
