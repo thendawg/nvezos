@@ -30,13 +30,12 @@ c) Dont select to add any additional drivers or 3rd party utilities - just stick
 
 d) The only thing youll need to select is where to perform the install. In most cases for a miner, you can simply set to erase the      current OS and install. Otherwise you may need to use custom options.
 
-e) Setup a username and password for admin access, at this point you need to set this user to login automatically. Im working ona  way around this, but for now, it's required for overclocking to work correctly. This username/pw is not linked to the WebUI username/password, however, feel free to set it the same if you like.
+e) Setup a username and password for admin access, at this point you need to set this user to login automatically. Im working on a way around this, but for now, it's required for overclocking to work correctly. This username/pw is not linked to the WebUI username/password, however, feel free to set it the same if you like. NOTE: Once setup is complete, the miner will not output local display even if a monitor is connected, so this lessons the security concern of using auto-login.
 
 f) When the install completes, it will prompt to reboot, sometimes it will hang on the final screen, if it does just power off the system, remove the install media, and boot it back up.
 
 4) After the install is complete and you are booted into the gnome graphical environment, open a terminal (Click activities, then start typing terminal) and run the following commands.
 
-hostname -I 
 
 sudo apt-get -y install git
 
