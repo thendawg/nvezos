@@ -22,12 +22,12 @@ You will also need to insure your monitor is connected to the primary GPU. Once 
 
 2) Install Ubuntu-GNOME as normal (I recommend not installing 3rd party software, or checking any of the other optional elements as it could cause a potential driver conflict)
 
-a) Make bootable USB drive using Rufus (recommende) or another utility
-b) Boot from USB and choose Install Ubuntu
-c) Dont select to add any additional drivers or 3rd party utilities - just stick with default options.
-d) The only thing youll need to select is where to perform the install. In most cases for a miner, you can simply set to erase the current OS and install. Otherwise you may need to use custom options.
-e) Setup a username and password for admin access, at this point you need to set this user to login automatically. Im working ona  way around this, but for now, it's required for overclocking to work correctly. This username/pw is not linked to the WebUI username/password, however, feel free to set it the same if you like.
-f) When the install completes, it will prompt to reboot, sometimes it will hang on the final screen, if it does just power off the system, remove the install media, and boot it back up.
+  a) Make bootable USB drive using Rufus (recommende) or another utility
+  b) Boot from USB and choose Install Ubuntu
+  c) Dont select to add any additional drivers or 3rd party utilities - just stick with default options.
+  d) The only thing youll need to select is where to perform the install. In most cases for a miner, you can simply set to erase the      current OS and install. Otherwise you may need to use custom options.
+  e) Setup a username and password for admin access, at this point you need to set this user to login automatically. Im working ona  way around this, but for now, it's required for overclocking to work correctly. This username/pw is not linked to the WebUI username/password, however, feel free to set it the same if you like.
+  f) When the install completes, it will prompt to reboot, sometimes it will hang on the final screen, if it does just power off the system, remove the install media, and boot it back up.
 
 4) After the install is complete and you are booted into the gnome graphical environment, open a terminal (Click activities, then start typing terminal) and run the following commands.
 
