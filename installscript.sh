@@ -46,17 +46,21 @@ chown -R www-data /var/www/html/
 chmod -R 775 /var/www/html/
 
 # Setup ethminer
+apt-get -y install software-properties-common
+add-apt-repository -y ppa:ethereum/ethereum
+apt-get -y update
+apt-get -y install cmake libcryptopp-dev libleveldb-dev libjsoncpp-dev libjsonrpccpp-dev libboost-all-dev libgmp-dev libreadline-dev libcurl4-gnutls-dev ocl-icd-libopencl1 opencl-headers mesa-common-dev libmicrohttpd-dev build-essential
 mkdir /ethminer/
-chown www-data /ethminer/
-chmod 755 /ethminer/
 cd /ethminer/
-sudo -u www-data git clone "https://github.com/davilizh/cpp-ethereum.git"
+git clone "https://github.com/davilizh/cpp-ethereum.git"
 cd cpp-ethereum
-sudo -u www-data git checkout optimized_for_some_nvidian_cards
-sudo -u www-data mkdir build
+git checkout optimized_for_some_nvidian_cards
+mkdir build
 cd build
-sudo -u www-data cmake -DBUNDLE=cudaminer ..
-sudo -u www-data make -j8
+cmake -DBUNDLE=cudaminer ..
+make -j8
+chown -R www-data /ethminer/
+chmod -R 755 /ethminer/
 
 # Setup crontab (log cleanup script)
 /bin/cp -f /nvezos/installpayload/crontab /etc/crontab
@@ -85,6 +89,7 @@ systemctl enable gpupl.service
 systemctl enable gpufan.service
 
 # Make some directories/files and fix nvezos Ownership and Permissions
+mkdir /nvezos/logs/
 mkdir /nvezos/set/
 mkdir /nvezos/set/gpu/
 mkdir /nvezos/set/network/
@@ -93,6 +98,7 @@ mkdir /nvezos/set/status
 touch /nvezos/set/gpu/numgpu.data
 touch /nvezos/set/status/currentservicename.set
 touch /nvezos/set/status/whatarewemining.set
+touch /nvezos/logs/miner.log
 chown -R www-data /nvezos/
 chmod -R 755 /nvezos/
 
@@ -111,10 +117,9 @@ echo "www-data  ALL=(ALL:ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)
 
 # Install is complete - let's reboot'
 echo "Installation of NvEZOS is now complete"
-echo "After reboot you can customize this miner via the WebUI available at:"
+echo "The miner will now be rebooted, after reboot you can customize this miner via the WebUI available at:"
 hostname -I
-echo "Press any key to reboot"
-read -n 1 -t 30
+read -rsp $'Press any key to continue...\n' -n1 key
 shutdown -r now
 
 
