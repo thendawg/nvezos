@@ -39,9 +39,6 @@ a2dissite 000-default.conf
 a2ensite default-ssl.conf
 systemctl restart apache2
 
-# Set Default WebUI Password
-echo nvezos | htpasswd -c -i /nvezos/set/password/passwords miner
-
 # Move PHP/WebUI files into place
 /bin/cp -rf /nvezos/installpayload/html/ /var/www/
 rm -rf /var/www/html/index.html
@@ -87,7 +84,15 @@ systemctl enable gpuoc.service
 systemctl enable gpupl.service
 systemctl enable gpufan.service
 
-# Fix nvezos Ownership and Permissions
+# Make some directories/files and fix nvezos Ownership and Permissions
+mkdir /nvezos/set/
+mkdir /nvezos/set/gpu/
+mkdir /nvezos/set/network/
+mkdir /nvezos/set/password
+mkdir /nvezos/set/status
+touch /nvezos/set/gpu/numgpu.data
+touch /nvezos/set/status/currentservicename.set
+touch /nvezos/set/status/whatarewemining.set
 chown -R www-data /nvezos/
 chmod -R 755 /nvezos/
 
@@ -97,6 +102,9 @@ rm -rf /cuda/
 
 # Setup xorg.conf
 nvidia-xconfig -a --cool-bits=31 --allow-empty-initial-configuration
+
+# Set Default WebUI Password
+echo nvezos | htpasswd -c -i /nvezos/set/password/passwords miner
 
 # Setup passwordless sudo for www-data
 echo "www-data  ALL=(ALL:ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)
