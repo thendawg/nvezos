@@ -47,7 +47,7 @@ cd /nvezos/
 
 sudo chmod +x installscript.sh
 
-sudo ./installscript.sh
+sudo ./installscript.sh (NOTE: installscriptlocal.sh expects the cuda 8 .deb to already be in /cuda/ this is for use in a future deployment)
 
 
 NOTE: During the script, the nvidia driver may prompt you to select the display manager, you should be able to simply hit enter twice, but to be certain the correct display manager to choose is gdm3.
