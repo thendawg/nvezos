@@ -120,7 +120,7 @@ echo "www-data  ALL=(ALL:ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)
 echo "Installation of NvEZOS is now complete"
 echo "The miner will now be rebooted, after reboot you can customize this miner via the WebUI available at:"
 hostname -I
-read -rsp $'Press any key to continue...\n' -n1 key
+read -p "Press enter to continue..."
 shutdown -r now
 
 
