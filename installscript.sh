@@ -120,7 +120,7 @@ rm -rf /cuda/
 echo "Installation of NvEZOS is now complete"
 echo "The miner will now be rebooted, after reboot you can customize this miner via the WebUI available at:"
 hostname -I
-read  -n 1 -p "Press Enter to Restart" mainmenuinput
+read  -n 1 -p "Press Enter to Restart" </dev/tty
 shutdown -r now
 
 
