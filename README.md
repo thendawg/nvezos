@@ -23,11 +23,17 @@ IMPORTANT - Your miner must be connected to the internet to run this script as i
 4) After the install is complete and you are booted into the gnome graphical environment, open a terminal (Click activities, then start typing terminal) and run the following commands.
 
 sudo apt-get -y install git
+
 cd /
+
 sudo git clone https://github.com/thendawg/nvezos.git
+
 sudo ./
+
 sudo chmod +x installscript.sh
+
 sudo ./installscript.sh
+
 
 NOTE: During the script, the nvidia driver may prompt you to select the display manager, you should be able to simply hit enter twice, but to be certain the correct display manager to choose is gdm3.
 NOTE: You may see various errors/warnings throughout the script, unless it halts, please ignore these - the ethminer build particularly tends to have several warnings/errors.
