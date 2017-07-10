@@ -84,7 +84,7 @@
 		</div>
 	<?php
 		$newhostname = $_POST['hostname'];
-		exec('hostnamectl set-hostname '.$newhostname.'');
+		exec('sudo hostnamectl set-hostname '.$newhostname.'');
 
 	?>
              <!-- /. PAGE INNER  -->

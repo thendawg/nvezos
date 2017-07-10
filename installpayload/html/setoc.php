@@ -119,6 +119,33 @@
 		$gpu7fan = $_POST['gpu7fan'];
 		$gpu7pl = $_POST['gpu7pl'];
 
+		if ($ocswitch == "yes") {
+		file_put_contents('/nvezos/set/gpu/ocswitch.set', "checked");
+		file_put_contents('/nvezos/set/gpu/ocnoswitch.set', "");
+		}
+		else {
+		file_put_contents('/nvezos/set/gpu/ocnoswitch.set', "checked");
+		file_put_contents('/nvezos/set/gpu/ocswitch.set', "");
+		}
+		
+		if ($fanswitch == "yes") {
+		file_put_contents('/nvezos/set/gpu/fanswitch.set', "checked");
+		file_put_contents('/nvezos/set/gpu/fannoswitch.set', "");
+		}
+		else {
+		file_put_contents('/nvezos/set/gpu/fannoswitch.set', "checked");	
+		file_put_contents('/nvezos/set/gpu/fanswitch.set', "");		
+		}
+
+		if ($plswitch == "yes") {
+		file_put_contents('/nvezos/set/gpu/plswitch.set', "checked");		
+		file_put_contents('/nvezos/set/gpu/plnoswitch.set', "");
+		}
+		else {
+		file_put_contents('/nvezos/set/gpu/plnoswitch.set', "checked");
+		file_put_contents('/nvezos/set/gpu/plswitch.set', "");		
+		}
+		
 		file_put_contents('/nvezos/set/gpu/gpu0core.set', $gpu0core);
 		file_put_contents('/nvezos/set/gpu/gpu0mem.set', $gpu0mem);
 		file_put_contents('/nvezos/set/gpu/gpu0fan.set', $gpu0fan);

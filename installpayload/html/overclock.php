@@ -95,14 +95,14 @@
 			    </div>
                             <form name="OCSetup" method="Post" ACTION ="setoc.php">
 				Overclocking Enabled?<br>
-				<input type="radio" name="ocswitch" value="yes"> Yes &nbsp;&nbsp;
-				<input type="radio" name="ocswitch" value="no"> No <br>
+				<input type="radio" name="ocswitch" value="yes" <?php echo exec('cat /nvezos/set/gpu/ocswitch.set'); ?> > Yes &nbsp;&nbsp;
+				<input type="radio" name="ocswitch" value="no" <?php echo exec('cat /nvezos/set/gpu/ocnoswitch.set'); ?> > No <br>
 				Set Manual Fan Speed? (If set to no, fan speed values will be ignored)<br>
-				<input type="radio" name="fanswitch" value="yes"> Yes &nbsp;&nbsp;
-				<input type="radio" name="fanswitch" value="no"> No <br>
+				<input type="radio" name="fanswitch" value="yes" <?php echo exec('cat /nvezos/set/gpu/fanswitch.set'); ?> > Yes &nbsp;&nbsp;
+				<input type="radio" name="fanswitch" value="no" <?php echo exec('cat /nvezos/set/gpu/fannoswitch.set'); ?> > No <br>
 				Set Power Limit? (If set to no, power limit values will be ignored)<br>
-				<input type="radio" name="plswitch" value="yes"> Yes &nbsp;&nbsp;
-				<input type="radio" name="plswitch" value="no"> No <br><br>
+				<input type="radio" name="plswitch" value="yes" <?php echo exec('cat /nvezos/set/gpu/plswitch.set'); ?> > Yes &nbsp;&nbsp;
+				<input type="radio" name="plswitch" value="no"<?php echo exec('cat /nvezos/set/gpu/plnoswitch.set'); ?> > No <br><br>
 				<table class="table table-striped table-bordered table-hover">
 					<thead>
 						<th>GPU Index</th><th>Core Offset</th><th>Memory Offset</th><th>Fan Speed</th><th>Power Limit</th>
@@ -179,7 +179,7 @@
 			   Just ignore the GPU's you dont have, they'll likely be filtered out in a future release. If you wish to disable overclocking simply set to "No" and apply settings, everything in the form will be disregarded. Fan Speed Control and Power Limit are set independently from OC control, so you can have 1, 2, or all 3.<br><br>
 			  It's recommended to start with a low overclock then increase in steps. If an overclock results in instability, set lower values here, then reboot the system entirely via the "Network Settings" 				  page.<br><br>
 			  All values (other than fan speed and power limits) are entered as offset and must be whole integers. You can decrease clockspeed by using a negative number, in my case I run around -100 core 				  offset on my GTX 1060's.<br><br>
-			  Power limits are set in watts, fan speed is set in percent. (NOTE: Do not enter the "%" sign in the form, only the value) If you lower the power limit too far it's likely to cause the card to 	 			  throttle.<br>
+			  Power limits are set in watts, fan speed is set in percent. (NOTE: Do not enter the "%" sign in the form, only the value) If you lower the power limit too far it's likely to cause the card to 	 			  throttle. In order to disable Power Limit setting after it has been enabled, you must disable, then reboot - easier to just set higher if that's what you desire.<br>
 			  </h5>
 			  </div>
 		 </div>
