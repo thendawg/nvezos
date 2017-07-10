@@ -112,6 +112,7 @@
 					      }
 		else { echo "Something went wrong!"; }
 		exec('/nvezos/scripts/network/applysettings.sh');
+		exec('sudo ip addr flush enp0s3 && sudo systemctl restart networking.service');
 	?>
              <!-- /. PAGE INNER  -->
             </div>
