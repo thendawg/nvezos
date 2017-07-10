@@ -28,7 +28,7 @@ cd /
 
 sudo git clone https://github.com/thendawg/nvezos.git
 
-sudo ./
+cd /nvezos/
 
 sudo chmod +x installscript.sh
 
