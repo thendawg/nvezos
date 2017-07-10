@@ -34,7 +34,7 @@ e) Setup a username and password for admin access, at this point you need to set
 
 f) When the install completes, it will prompt to reboot, sometimes it will hang on the final screen, if it does just power off the system, remove the install media, and boot it back up.
 
-4) After the install is complete and you are booted into the gnome graphical environment, open a terminal (Click activities, then start typing terminal) and run the following commands.
+3) After the install is complete and you are booted into the gnome graphical environment, open a terminal (Click activities, then start typing terminal) and run the following commands.
 
 
 sudo apt-get -y install git
@@ -54,6 +54,6 @@ NOTE: During the script, the nvidia driver may prompt you to select the display 
 NOTE: You may see various errors/warnings throughout the script, unless it halts, please ignore these - the ethminer build particularly tends to have several warnings/errors.
 NOTE: This script is quite lengthy and may take up to 30 minutes or so to run, dont abort if something appears to hang for several minutes. It may take significantly longer if your internet connection is slow. In the future I plan to distribute this with the CUDA 8 deb stored locally, so if you have to deploy to multiple systems, it wont have to be downloaded multiple times.
 
-5) At this point it should prompt you to reboot, after the reboot the system will boot and become headless (no display output). You can now disonnect your monitor from the miner, all configuration will be performed via the WebUI with backup access via SSH for debugging/advanced config.
+4) At this point it should prompt you to reboot, after the reboot the system will boot and become headless (no display output). You can now disonnect your monitor from the miner, all configuration will be performed via the WebUI with backup access via SSH for debugging/advanced config.
 
 Finally, this is the install procedure for now. When a public version is release I tend to put it all in a neatly packed ISO.
