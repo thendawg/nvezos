@@ -1,5 +1,4 @@
 !#/bin/bash
-
 # Install SSH Daemon for management first
 apt-get -y install openssh-server
 
@@ -85,9 +84,6 @@ chmod 755 /etc/systemd/system/gpuoc.service
 chmod 755 /etc/systemd/system/gpupl.service
 chmod 755 /etc/systemd/system/gpufan.service
 systemctl daemon-reload
-systemctl enable gpuoc.service
-systemctl enable gpupl.service
-systemctl enable gpufan.service
 
 # Make some directories/files and fix nvezos Ownership and Permissions
 mkdir /nvezos/logs/
@@ -103,13 +99,12 @@ touch /nvezos/logs/miner.log
 chown -R www-data /nvezos/
 chmod -R 755 /nvezos/
 
-# Cleanup
-rm -rf /nvezos/installpayload/
-rm -rf /cuda/
-
 # Setup xorg.conf
 nvidia-xconfig -a --cool-bits=31 --allow-empty-initial-configuration
-sed -i -e 's/Option         "AllowEmptyInitialConfiguration" "True"/Option         "ConnectedMonitor" "DFP-0"/g' /etc/X11/xorg.conf
+/bin/cp -rf /nvezos/installpayload/dfp0.edid /etc/X11/
+sed -i '/Option         "AllowEmptyInitialConfiguration" "True"/a    Option         "ConnectedMonitor" "DFP-0"' /etc/X11/xorg.conf
+sed -i '/Option         "ConnectedMonitor" "DFP-0"/a    Option         "CustomEDID" "DFP-0:/etc/X11/dfp0.edid"' /etc/X11/xorg.conf
+sudo -u $SUDO_USER xhost +SI:localuser:gpuservice
 
 # Set Default WebUI Password
 echo nvezos | htpasswd -c -i /nvezos/set/password/passwords miner
@@ -117,13 +112,15 @@ echo nvezos | htpasswd -c -i /nvezos/set/password/passwords miner
 # Setup passwordless sudo for www-data
 echo "www-data  ALL=(ALL:ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)
 
+# Cleanup
+rm -rf /nvezos/installpayload/
+rm -rf /cuda/
+
 # Install is complete - let's reboot'
 echo "Installation of NvEZOS is now complete"
 echo "The miner will now be rebooted, after reboot you can customize this miner via the WebUI available at:"
 hostname -I
 read  -n 1 -p "Press Enter to Restart" mainmenuinput
 shutdown -r now
-
-
 
 
