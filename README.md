@@ -14,7 +14,7 @@ MEW Address - 0x3d454b7b858335805f83D30842d9f0fACd50e545
 
 Installation Instructions
 
-IMPORTANT - Your miner must be connected to the internet to run this script as it relies on other repos and git's to install all of the packages. Additionally, CUDA 8 is quite large, so during the cour
+IMPORTANT - Your miner must be connected to the internet to run this script as it relies on other repos and git's to install all of the packages. Additionally, CUDA 8 is quite large, so during the install, it may download 2-2.5GB data.
 
 You will also need to insure your monitor is connected to the primary GPU. Once setup, you can disconnect it, but it does need to be on the primary GPU (not onboard) during setup.
 
@@ -22,9 +22,12 @@ You will also need to insure your monitor is connected to the primary GPU. Once 
 
 2) Install Ubuntu-GNOME as normal (I recommend not installing 3rd party software, or checking any of the other optional elements as it could cause a potential driver conflict)
 
-3) During your install, the username you pick will only be to login via ssh for administrative purposes, it will not effect the WebUI. Feel free to make it the same (miner) if you like, however the passwords will not be linked.
-
-*EXTREMELY IMPORTANT* Due to long term stability issues with remote X calls, the most stable way Ive found to get overclocking to work consistently is to have the default user setup during install set to auto login. This provides a local xsession whcih can be called by the overclocking scripts. No need to worry about security as the system will boot with no display output once setup is complete anyways.
+a) Make bootable USB drive using Rufus (recommende) or another utility
+b) Boot from USB and choose Install Ubuntu
+c) Dont select to add any additional drivers or 3rd party utilities - just stick with default options.
+d) The only thing youll need to select is where to perform the install. In most cases for a miner, you can simply set to erase the current OS and install. Otherwise you may need to use custom options.
+e) Setup a username and password for admin access, at this point you need to set this user to login automatically. Im working ona  way around this, but for now, it's required for overclocking to work correctly. This username/pw is not linked to the WebUI username/password, however, feel free to set it the same if you like.
+f) When the install completes, it will prompt to reboot, sometimes it will hang on the final screen, if it does just power off the system, remove the install media, and boot it back up.
 
 4) After the install is complete and you are booted into the gnome graphical environment, open a terminal (Click activities, then start typing terminal) and run the following commands.
 
@@ -45,10 +48,8 @@ sudo ./installscript.sh
 
 NOTE: During the script, the nvidia driver may prompt you to select the display manager, you should be able to simply hit enter twice, but to be certain the correct display manager to choose is gdm3.
 NOTE: You may see various errors/warnings throughout the script, unless it halts, please ignore these - the ethminer build particularly tends to have several warnings/errors.
-NOTE: This script is quite lengthy and may take up to 30 minutes or so to run, dont abort if something appears to hang for several minutes.
+NOTE: This script is quite lengthy and may take up to 30 minutes or so to run, dont abort if something appears to hang for several minutes. It may take significantly longer if your internet connection is slow. In the future I plan to distribute this with the CUDA 8 deb stored locally, so if you have to deploy to multiple systems, it wont have to be downloaded multiple times.
 
 5) At this point it should prompt you to reboot, after the reboot the system will boot and become headless (no display output). You can now disonnect your monitor from the miner, all configuration will be performed via the WebUI with backup access via SSH for debugging/advanced config.
-
-**In some instances it may 
 
 Finally, this is the install procedure for now. When a public version is release I tend to put it all in a neatly packed ISO.
