@@ -85,7 +85,8 @@
 		</div>
 	<?php
 		$newpw = $_POST['newpw'];
-		exec('echo '.$newpq.' | htpasswd -c -i /nvezos/set/password/passwords miner');
+		exec('echo '.$newpw.' | htpasswd -c -i /nvezos/set/password/passwords miner');
+		sleep(2);
 		exec('/nvezos/scripts/system/restartapache.sh');		 
 	?>
              <!-- /. PAGE INNER  -->

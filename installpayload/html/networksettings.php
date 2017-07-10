@@ -93,7 +93,7 @@
 			    </div>
                             <div class="panel-body">
 			    <div class="text-center">Set IP Type:<br>
-               	    <form name="ipsettings" method="POST" ACTION ="setip.php">
+               	    <form name="ipsettings" method="POST" ACTION ="null.php">
 				<input type="radio" name="ipselector" value="dhcp"> DHCP <br>
 				<input type="radio" name="ipselector" value="static"> Static <br>
 				If set to DHCP, any settings below will not be applied. <br>
@@ -102,7 +102,7 @@
 				Gateway<br><input name="gateway" type="text" style="width: 225px;" /><br>
 				DNS Server 1<br><input name="dns1" type="text" style="width: 225px;" /><br>
 				DNS Server 2<br><input name="dns2" type="text" style="width: 225px;" /><br><br>
-				WARNING: The miner will auto-reboot once changes are applied. <br>It's normal for the next page to fail to load.<br><br>
+				ALERT: Changing IP from WebUI is currently disabled<br><br>
 				<input type="submit" name="submit" value="Set and Restart Networking/Apache"><br><br>
 				</div>
 			    </form>
@@ -155,9 +155,9 @@
                             </div>
 			    </div>
                             <div class="panel-body">
-			    <div class="text-center">Enter new password below.
+			    <div class="text-center">Enter new password below.<br>The WebUI will likely timeout after hitting enter, simply reconnect after a few seconds with the new password.
                             <form action="changepw.php" method="POST">
-    				<input name="newpw" type="text" style="width: 180px;" /><br><br>
+    				<input name="newpw" type="password" style="width: 180px;" /><br><br>
    				<input type="submit" name="submit" value="Change Password">
 			    </form>
 			    </div>

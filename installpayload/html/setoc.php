@@ -154,81 +154,97 @@
 
 		if ($ocswitch == "yes") {		
 		file_put_contents('/nvezos/scripts/gpu/oc.sh', '#!/bin/bash'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:0]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:1]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:2]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:3]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:4]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:5]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:6]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:7]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:0]/GPUGraphicsClockOffset[3]='.$gpu0core.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:1]/GPUGraphicsClockOffset[3]='.$gpu1core.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:2]/GPUGraphicsClockOffset[3]='.$gpu2core.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:3]/GPUGraphicsClockOffset[3]='.$gpu3core.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:4]/GPUGraphicsClockOffset[3]='.$gpu4core.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:5]/GPUGraphicsClockOffset[3]='.$gpu5core.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:6]/GPUGraphicsClockOffset[3]='.$gpu6core.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:7]/GPUGraphicsClockOffset[3]='.$gpu7core.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:0]/GPUMemoryTransferRateOffset[3]='.$gpu0mem.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:1]/GPUMemoryTransferRateOffset[3]='.$gpu1mem.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:2]/GPUMemoryTransferRateOffset[3]='.$gpu2mem.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:3]/GPUMemoryTransferRateOffset[3]='.$gpu3mem.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:4]/GPUMemoryTransferRateOffset[3]='.$gpu4mem.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:5]/GPUMemoryTransferRateOffset[3]='.$gpu5mem.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:6]/GPUMemoryTransferRateOffset[3]='.$gpu6mem.'"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:7]/GPUMemoryTransferRateOffset[3]='.$gpu7mem.'"'."\n");
+			'un="$(cat /nvezos/set/status/defaultuser.set)"'."\n".
+			'export DISPLAY=:0'."\n".
+			'sudo -u $un xhost +'."\n".
+			'nvidia-settings -a "[gpu:0]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:1]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:2]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:3]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:4]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:5]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:6]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:7]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:0]/GPUGraphicsClockOffset[3]='.$gpu0core.'"'."\n".
+			'nvidia-settings -a "[gpu:1]/GPUGraphicsClockOffset[3]='.$gpu1core.'"'."\n".
+			'nvidia-settings -a "[gpu:2]/GPUGraphicsClockOffset[3]='.$gpu2core.'"'."\n".
+			'nvidia-settings -a "[gpu:3]/GPUGraphicsClockOffset[3]='.$gpu3core.'"'."\n".
+			'nvidia-settings -a "[gpu:4]/GPUGraphicsClockOffset[3]='.$gpu4core.'"'."\n".
+			'nvidia-settings -a "[gpu:5]/GPUGraphicsClockOffset[3]='.$gpu5core.'"'."\n".
+			'nvidia-settings -a "[gpu:6]/GPUGraphicsClockOffset[3]='.$gpu6core.'"'."\n".
+			'nvidia-settings -a "[gpu:7]/GPUGraphicsClockOffset[3]='.$gpu7core.'"'."\n".
+			'nvidia-settings -a "[gpu:0]/GPUMemoryTransferRateOffset[3]='.$gpu0mem.'"'."\n".
+			'nvidia-settings -a "[gpu:1]/GPUMemoryTransferRateOffset[3]='.$gpu1mem.'"'."\n".
+			'nvidia-settings -a "[gpu:2]/GPUMemoryTransferRateOffset[3]='.$gpu2mem.'"'."\n".
+			'nvidia-settings -a "[gpu:3]/GPUMemoryTransferRateOffset[3]='.$gpu3mem.'"'."\n".
+			'nvidia-settings -a "[gpu:4]/GPUMemoryTransferRateOffset[3]='.$gpu4mem.'"'."\n".
+			'nvidia-settings -a "[gpu:5]/GPUMemoryTransferRateOffset[3]='.$gpu5mem.'"'."\n".
+			'nvidia-settings -a "[gpu:6]/GPUMemoryTransferRateOffset[3]='.$gpu6mem.'"'."\n".
+			'nvidia-settings -a "[gpu:7]/GPUMemoryTransferRateOffset[3]='.$gpu7mem.'"'."\n".
+			'sudo -u $un xhost -');
 			}
 		elseif ($ocswitch == "no") {
 		file_put_contents('/nvezos/scripts/gpu/oc.sh', '#!/bin/bash'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:0]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:1]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:2]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:3]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:4]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:5]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:6]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:7]/GPUPowerMizerMode=1"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:0]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:1]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:2]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:3]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:4]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:5]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:6]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:7]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:0]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:1]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:2]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:3]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:4]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:5]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:6]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a "[gpu:7]/GPUMemoryTransferRateOffset[3]=0"'."\n");
+			'un="$(cat /nvezos/set/status/defaultuser.set)"'."\n".
+			'export DISPLAY=:0'."\n".
+			'sudo -u $un xhost +'."\n".
+			'nvidia-settings -a "[gpu:0]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:1]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:2]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:3]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:4]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:5]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:6]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:7]/GPUPowerMizerMode=1"'."\n".
+			'nvidia-settings -a "[gpu:0]/GPUGraphicsClockOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:1]/GPUGraphicsClockOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:2]/GPUGraphicsClockOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:3]/GPUGraphicsClockOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:4]/GPUGraphicsClockOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:5]/GPUGraphicsClockOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:6]/GPUGraphicsClockOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:7]/GPUGraphicsClockOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:0]/GPUMemoryTransferRateOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:1]/GPUMemoryTransferRateOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:2]/GPUMemoryTransferRateOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:3]/GPUMemoryTransferRateOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:4]/GPUMemoryTransferRateOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:5]/GPUMemoryTransferRateOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:6]/GPUMemoryTransferRateOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:7]/GPUMemoryTransferRateOffset[3]=0"'."\n".
+			'sudo -u $un xhost -');
 			}
 		else { echo "Error, please try again"; }
 
 		if ($fanswitch == "yes") {
 		file_put_contents('/nvezos/scripts/gpu/fan.sh', '#!/bin/bash'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed='.$gpu0fan."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:1]/GPUFanControlState=1 -a [fan-1]/GPUTargetFanSpeed='.$gpu1fan."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:2]/GPUFanControlState=1 -a [fan-2]/GPUTargetFanSpeed='.$gpu2fan."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:3]/GPUFanControlState=1 -a [fan-3]/GPUTargetFanSpeed='.$gpu3fan."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:4]/GPUFanControlState=1 -a [fan-4]/GPUTargetFanSpeed='.$gpu4fan."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:5]/GPUFanControlState=1 -a [fan-5]/GPUTargetFanSpeed='.$gpu5fan."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:6]/GPUFanControlState=1 -a [fan-6]/GPUTargetFanSpeed='.$gpu6fan."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:7]/GPUFanControlState=1 -a [fan-7]/GPUTargetFanSpeed='.$gpu7fan."\n");
+			'un="$(cat /nvezos/set/status/defaultuser.set)"'."\n".
+			'export DISPLAY=:0'."\n".
+			'sudo -u $un xhost +'."\n".
+			'nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed='.$gpu0fan."\n".
+			'nvidia-settings -a [gpu:1]/GPUFanControlState=1 -a [fan-1]/GPUTargetFanSpeed='.$gpu1fan."\n".
+			'nvidia-settings -a [gpu:2]/GPUFanControlState=1 -a [fan-2]/GPUTargetFanSpeed='.$gpu2fan."\n".
+			'nvidia-settings -a [gpu:3]/GPUFanControlState=1 -a [fan-3]/GPUTargetFanSpeed='.$gpu3fan."\n".
+			'nvidia-settings -a [gpu:4]/GPUFanControlState=1 -a [fan-4]/GPUTargetFanSpeed='.$gpu4fan."\n".
+			'nvidia-settings -a [gpu:5]/GPUFanControlState=1 -a [fan-5]/GPUTargetFanSpeed='.$gpu5fan."\n".
+			'nvidia-settings -a [gpu:6]/GPUFanControlState=1 -a [fan-6]/GPUTargetFanSpeed='.$gpu6fan."\n".
+			'nvidia-settings -a [gpu:7]/GPUFanControlState=1 -a [fan-7]/GPUTargetFanSpeed='.$gpu7fan."\n".
+			'sudo -u $un xhost -');
 			}
 		elseif ($fanswitch == "no") {
 		file_put_contents('/nvezos/scripts/gpu/fan.sh', '#!/bin/bash'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:0]/GPUFanControlState=0'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:1]/GPUFanControlState=0'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:2]/GPUFanControlState=0'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:3]/GPUFanControlState=0'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:4]/GPUFanControlState=0'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:5]/GPUFanControlState=0'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:6]/GPUFanControlState=0'."\n".
-			'DISPLAY=:0 XAUTHORITY=/var/lib/mdm/:0.Xauth nvidia-settings -a [gpu:7]/GPUFanControlState=0'."\n");
+			'un="$(cat /nvezos/set/status/defaultuser.set)"'."\n".
+			'export DISPLAY=:0'."\n".
+			'sudo -u $un xhost +'."\n".
+			'nvidia-settings -a [gpu:0]/GPUFanControlState=0'."\n".
+			'nvidia-settings -a [gpu:1]/GPUFanControlState=0'."\n".
+			'nvidia-settings -a [gpu:2]/GPUFanControlState=0'."\n".
+			'nvidia-settings -a [gpu:3]/GPUFanControlState=0'."\n".
+			'nvidia-settings -a [gpu:4]/GPUFanControlState=0'."\n".
+			'nvidia-settings -a [gpu:5]/GPUFanControlState=0'."\n".
+			'nvidia-settings -a [gpu:6]/GPUFanControlState=0'."\n".
+			'nvidia-settings -a [gpu:7]/GPUFanControlState=0'."\n".
+			'sudo -u $un xhost -');
 			}
 		else { echo "Error, please try again"; }
 
