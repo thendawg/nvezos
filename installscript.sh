@@ -67,6 +67,7 @@ chmod -R 755 /ethminer/
 chmod 755 /etc/crontab
 
 # Setup miner services
+useradd -m gpuservice
 /bin/cp /nvezos/installpayload/services/ethminer.service /etc/systemd/system/
 /bin/cp /nvezos/installpayload/services/etcminer.service /etc/systemd/system/
 /bin/cp /nvezos/installpayload/services/expminer.service /etc/systemd/system/

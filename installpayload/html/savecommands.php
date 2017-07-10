@@ -98,27 +98,27 @@
 				file_put_contents('/nvezos/logs/expcommandbox.log', "".$expcommand."\n");
 			    file_put_contents('/nvezos/scripts/miners/eth.sh', '#!/bin/bash'."\n".
 					'/bin/cp -rf /nvezos/set/network/ethpoolpage.set /nvezos/set/status/poolurl.data'."\n". 
-					'echo "eth.service" > /nvezos/set/status/currentservicename.set'."\n".
+					'echo "ethminer.service" > /nvezos/set/status/currentservicename.set'."\n".
 					'echo "Eth" > /nvezos/set/status/whatarewemining.set'."\n".
 					$ethcommand.' &>> /nvezos/logs/miner.log'."\n");
 			    file_put_contents('/nvezos/scripts/miners/music.sh', '#!/bin/bash'."\n".
 					'/bin/cp -rf /nvezos/set/network/musicpoolpage.set /nvezos/set/status/poolurl.data'."\n".
-					'echo "music.service" > /nvezos/set/status/currentservicename.set'."\n".
+					'echo "musicminer.service" > /nvezos/set/status/currentservicename.set'."\n".
 					'echo "Musicoin" > /nvezos/set/status/whatarewemining.set'."\n".
 					$musiccommand.' &>> /nvezos/logs/miner.log'."\n");
 			    file_put_contents('/nvezos/scripts/miners/etc.sh', '#!/bin/bash'."\n".
 					'/bin/cp -rf /nvezos/set/network/etcpoolpage.set /nvezos/set/status/poolurl.data'."\n".
-					'echo "etc.service" > /nvezos/set/status/currentservicename.set'."\n".
+					'echo "etcminer.service" > /nvezos/set/status/currentservicename.set'."\n".
 					'echo "ETC" > /nvezos/set/status/whatarewemining.set'."\n".
 					$etccommand.' &>> /nvezos/logs/miner.log'."\n");
 			    file_put_contents('/nvezos/scripts/miners/ubiq.sh', '#!/bin/bash'."\n".
 					'/bin/cp -rf /nvezos/set/network/ubiqpoolpage.set /nvezos/set/status/poolurl.data'."\n".
-					'echo "ubiq.service" > /nvezos/set/status/currentservicename.set'."\n".
+					'echo "ubiqminer.service" > /nvezos/set/status/currentservicename.set'."\n".
 					'echo "Ubiq" > /nvezos/set/status/whatarewemining.set'."\n".
 					$ubiqcommand.' &>> /nvezos/logs/miner.log'."\n");
 			    file_put_contents('/nvezos/scripts/miners/exp.sh', '#!/bin/bash'."\n". 
 					'/bin/cp -rf /nvezos/set/network/exppoolpage.set /nvezos/set/status/poolurl.data'."\n".
-					'echo "exp.service" > /nvezos/set/status/currentservicename.set'."\n".
+					'echo "expminer.service" > /nvezos/set/status/currentservicename.set'."\n".
 					'echo "Expanse" > /nvezos/set/status/whatarewemining.set'."\n".
 					$expcommand.' &>> /nvezos/logs/miner.log'."\n");
 				exec('chmod +x /nvezos/scripts/miners/eth.sh');

@@ -102,6 +102,7 @@
 				Gateway<br><input name="gateway" type="text" style="width: 225px;" /><br>
 				DNS Server 1<br><input name="dns1" type="text" style="width: 225px;" /><br>
 				DNS Server 2<br><input name="dns2" type="text" style="width: 225px;" /><br><br>
+				WARNING: The miner will auto-reboot once changes are applied. <br>It's normal for the next page to fail to load.<br><br>
 				<input type="submit" name="submit" value="Set and Restart Networking/Apache"><br><br>
 				</div>
 			    </form>

@@ -3,7 +3,7 @@ Description=Setting GPU Fan Speed
 After=network.target	
 
 [Service]
-User=www-data
+User=gpuservice
 ExecStart=/nvezos/scripts/gpu/fan.sh
 RemainAfterExit=yes
 Restart=no
