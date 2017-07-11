@@ -1,8 +1,5 @@
 !#/bin/bash
-exec 3>&1 4>&2
-trap 'exec 2>&4 1>&3' 0 1 2 3
-exec 1>/nvezos/install.log 2>&1
-
+(
 # Install SSH Daemon for management first
 apt-get -y install openssh-server
 
@@ -133,5 +130,6 @@ hostname -I
 echo "System will now reboot in 60 seconds, or you may restart manually"
 sleep 60
 shutdown -r now
+) | tee -a /nvezos/install.log
 
 
