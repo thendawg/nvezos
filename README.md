@@ -41,7 +41,7 @@ NOTE: During the script, the nvidia driver may prompt you to select the display 
 NOTE: You may see various errors/warnings throughout the script, unless it halts, please ignore these - the ethminer build particularly tends to have several warnings/errors.
 NOTE: This script is quite lengthy and may take up to 30 minutes or so to run, dont abort if something appears to hang for several minutes.
 
-4) At this point it should prompt you to reboot, after the reboot the system will boot and become headless (no display output). You can now disonnect your monitor from the miner, all configuration will be performed via the WebUI with backup access via SSH for debugging/advanced config.
+4) At this point the miner will auto reboot after 60 seconds (or you can manually restart), after the reboot the system will boot and become headless (no display output). You can now disonnect your monitor from the miner, all configuration will be performed via the WebUI with backup access via SSH for debugging/advanced config.
 
 Finally, this is the install procedure for now. When a public version is release I tend to put it all in a neatly packed ISO.
 
