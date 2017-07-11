@@ -26,8 +26,6 @@ You will also need to insure your monitor is connected to the primary GPU. Once 
 
 4) After the install is complete and you are booted into the gnome graphical environment, open a terminal (Click activities, then start typing terminal) and run the following commands.
 
-hostname -I 
-
 sudo apt-get -y install git
 
 cd /
