@@ -105,8 +105,6 @@ touch /nvezos/set/status/defaultuser.set
 echo nvezos | htpasswd -c -i /nvezos/set/password/passwords miner
 
 # Fix permissions
-chmod 777 /nvezos/set/status/defaultuser.set
-echo $USER > /nvezos/set/status/defaultuser.set
 chown -R www-data /nvezos/
 chmod -R 755 /nvezos/
 

@@ -83,6 +83,7 @@
                     </div>
 		</div>
 	<?php
+		$defaultusername = $_POST['defaultusername'];
 		$ocswitch = $_POST['ocswitch'];
 		$fanswitch = $_POST['fanswitch'];
 		$plswitch = $_POST['plswitch'];
@@ -119,6 +120,8 @@
 		$gpu7fan = $_POST['gpu7fan'];
 		$gpu7pl = $_POST['gpu7pl'];
 
+		file_put_contents('/nvezos/set/status/defaultuser.set', $defaultusername);
+		
 		if ($ocswitch == "yes") {
 		file_put_contents('/nvezos/set/gpu/ocswitch.set', "checked");
 		file_put_contents('/nvezos/set/gpu/ocnoswitch.set', "");

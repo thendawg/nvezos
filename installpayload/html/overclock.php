@@ -189,6 +189,9 @@
 					</tbody>
 				</table>
 				<br>
+				Enter default username below (The one you setup at install - this is needed to attach to it's X session)<br>
+				<input name="defaultusername" type="text" style="width: 110px;" />
+				<br><br>
 				The next page may take 10s or so to load, please do not cancel.<br>
 				<input type="submit" name="submit" value="Save and Apply OC">					
 			    </form>
