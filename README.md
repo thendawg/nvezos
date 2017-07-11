@@ -20,6 +20,8 @@ You will also need to insure your monitor is connected to the primary GPU. Once 
 
 2) Install Ubuntu-GNOME as normal (I recommend not installing 3rd party software, or checking any of the other optional elements as it could cause a potential driver conflict - For detailed instructions, see "OS Install" at the bottom)
 
+**EXTREMELY IMPORTANT** If you want the overclocking function to work, the user you setup must be set to "Auto-login" this provides an X session for our scripts to bind to. This shouldn't be much of a concern as once setup is complete, there will be no display output from the GPU anyways. 
+
 3) After the install is complete and you are booted into the gnome graphical environment, open a terminal (Click activities, then start typing terminal) and run the following commands.
 
 sudo apt-get -y install git
@@ -63,7 +65,9 @@ Finally, this is the install procedure for now. When a public version is release
 
 5) The easiest installation type to use is Erase disk and install Ubuntu (provided you only have one disk other than your USB drive), otherwise you'll need to use "Something Else"
 
-6) Confirm the disk changes, set your time zone, and setup your user account with password. DO NOT CHECK ENCRYPT HOME FOLDER. This user is seperate from the WebUI user, feel free to make them the same, but the passwords wont be linked.
+6) Confirm the disk changes, set your time zone, and setup your user account with password. DO NOT CHECK ENCRYPT HOME FOLDER. Also you must set this user to auto-login (see note below). This user is seperate from the WebUI user, feel free to make them the same, but the passwords wont be linked.
+
+**EXTREMELY IMPORTANT** If you want the overclocking function to work, the user you setup must be set to "Auto-login" this provides an X session for our scripts to bind to. This shouldn't be much of a concern as once setup is complete, there will be no display output from the GPU anyways. 
 
 7) Installation should complete on its own, it will prompt you to reboot. Ive noticed the reboot screen often hangs, if it does, just power cycle the system - I've never had an issue.
 
