@@ -18,13 +18,9 @@ You will also need to insure your monitor is connected to the primary GPU. Once 
 
 1) Download Ubuntu-GNOME 16.04 LTS Iso Here - http://cdimage.ubuntu.com/ubuntu-gnome/releases/16.04/release/
 
-2) Install Ubuntu-GNOME as normal (I recommend not installing 3rd party software, or checking any of the other optional elements as it could cause a potential driver conflict)
+2) Install Ubuntu-GNOME as normal (I recommend not installing 3rd party software, or checking any of the other optional elements as it could cause a potential driver conflict - For detailed instructions, see "OS Install" at the bottom)
 
-3) During your install, the username you pick will only be to login via ssh for administrative purposes, it will not effect the WebUI. Feel free to make it the same (miner) if you like, however the passwords will not be linked.
-
-*EXTREMELY IMPORTANT* Due to long term stability issues with remote X calls, the most stable way Ive found to get overclocking to work consistently is to have the default user setup during install set to auto login. This provides a local xsession whcih can be called by the overclocking scripts. No need to worry about security as the system will boot with no display output once setup is complete anyways.
-
-4) After the install is complete and you are booted into the gnome graphical environment, open a terminal (Click activities, then start typing terminal) and run the following commands.
+3) After the install is complete and you are booted into the gnome graphical environment, open a terminal (Click activities, then start typing terminal) and run the following commands.
 
 sudo apt-get -y install git
 
@@ -43,7 +39,7 @@ NOTE: During the script, the nvidia driver may prompt you to select the display 
 NOTE: You may see various errors/warnings throughout the script, unless it halts, please ignore these - the ethminer build particularly tends to have several warnings/errors.
 NOTE: This script is quite lengthy and may take up to 30 minutes or so to run, dont abort if something appears to hang for several minutes.
 
-5) At this point it should prompt you to reboot, after the reboot the system will boot and become headless (no display output). You can now disonnect your monitor from the miner, all configuration will be performed via the WebUI with backup access via SSH for debugging/advanced config.
+4) At this point it should prompt you to reboot, after the reboot the system will boot and become headless (no display output). You can now disonnect your monitor from the miner, all configuration will be performed via the WebUI with backup access via SSH for debugging/advanced config.
 
 Finally, this is the install procedure for now. When a public version is release I tend to put it all in a neatly packed ISO.
 
@@ -54,5 +50,23 @@ Finally, this is the install procedure for now. When a public version is release
 2. After applying overclocking and then rebooting the system you will notice the OC settings do not come back immediately. This is due to the daemons the initiate the settings trying to run before Xorg starts. Ive tried several targets but am unable to correct this. Ive put a workaround in place using crontab which restarts the associated daemons every 3 minutes. Thus, if you reboot the miner, your overclocking settings will return, but it could take several minutes, to apply them instantly just use the overclocking page.
 
 3. Cannot change IP via WebUI - the static address is being applied incorrectly or an interface isn't getting flushed - still working on this, expect it to be fixed soon. For now if you want to change the IP you'll have to do it via SSH.
+
+**OS INSTALL**
+
+1) Write ISO to USB drive and make bootable. The easiest way in Windows is to use Rufus - https://rufus.akeo.ie/ - just check "Create a bootable disk using" then select ISO Image. Hit the icon to the right to select your ISO. Make sure Quick Format and Create extended labels are checked.
+
+2) Boot from USB media. You can install to a USB drive, however, you will need 2 USB drives at this point, one to install to and one to install from.
+
+3) After Ubuntu-GNOME installer boots, select Install Ubuntu
+
+4) On the "Preparing to install" screens be sure to leave Download updates and Install thirs-party software unchecked.
+
+5) The easiest installation type to use is Erase disk and install Ubuntu (provided you only have one disk other than your USB drive), otherwise you'll need to use "Something Else"
+
+6) Confirm the disk changes, set your time zone, and setup your user account with password. DO NOT CHECK ENCRYPT HOME FOLDER. This user is seperate from the WebUI user, feel free to make them the same, but the passwords wont be linked.
+
+7) Installation should complete on its own, it will prompt you to reboot. Ive noticed the reboot screen often hangs, if it does, just power cycle the system - I've never had an issue.
+
+8) Be sure to remove the USB drive used for installation before the system boots again, it should now boot into the OS.
 
 
