@@ -17,6 +17,13 @@
     <link href="assets/css/custom.css" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <style type="text/css">
+  	.mobileShow { display: none;}
+   	/* Smartphone Portrait and Landscape */
+   	@media only screen
+   	and (min-device-width : 320px)
+   	and (max-device-width : 480px){ .mobileShow { display: inline;}}
+    </style>
 </head>
 <body>
      
@@ -71,7 +78,22 @@
                     <div class="col-lg-12">
                      <h2>Miner Settings</h2>   
                     </div>
-                </div>              
+                </div>
+	<!-- /. MOBILE NAV  -->        
+	<div class="mobileShow">
+	<div class="dropdown">
+  	<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Menu
+  	<span class="caret"></span></button>
+  	<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+   	<li role="presentation"><a role="menuitem" href="index.php">Monitor</a></li>
+  	<li role="presentation"><a role="menuitem" href="settings.php">Miner Settings</a></li>
+   	<li role="presentation"><a role="menuitem" href="poolstatus.php">Pool Status</a></li>
+    	<li role="presentation"><a role="menuitem" href="overclock.php">Overclocking</a></li>
+    	<li role="presentation"><a role="menuitem" href="networksettings.php">Network Settings</a></li>
+    	<li role="presentation"><a role="menuitem" href="http://www.reddit.com/r/nvezos">Help/Subreddit</a></li>
+  	</ul>
+	</div>
+	</div>      				
                  <!-- /. ROW  -->
                   <hr />
                 <div class="row">
@@ -166,7 +188,8 @@
 					</tr>
 					</tbody>
 				</table>
-				<br><br>
+				<br>
+				The next page may take 10s or so to load, please do not cancel.<br>
 				<input type="submit" name="submit" value="Save and Apply OC">					
 			    </form>
 				</div>
@@ -175,11 +198,12 @@
 			  <div class=col-lg-3>
 			  <h5>
 			  WARNING: Overclocking via this interface will ONLY function with nvidia GPU's and is performed entirely at the user's risk. <br><br>
-			  Please note, nvidia is aware of a bug that causes the GPU not to enter it's highest power mode during compute loads, due to this the observed clocks while mining may be lower than what you set 				  here. To offset, simply increase the value here. I.E. with GTX 1060 I use a +1200 memory offset which results in an actual memory offset under a mining load of +800. <br><br>
+			  Please note, nvidia is aware of a bug that causes the GPU not to enter it's highest power mode during compute loads, due to this the observed clocks while mining may be lower than what you set 				  here. To offset, simply increase the value here. I.E. with GTX 1060 I use a +1200 memory offset which results in an actual memory offset under a mining load of +600. <br><br>
 			   Just ignore the GPU's you dont have, they'll likely be filtered out in a future release. If you wish to disable overclocking simply set to "No" and apply settings, everything in the form will be disregarded. Fan Speed Control and Power Limit are set independently from OC control, so you can have 1, 2, or all 3.<br><br>
 			  It's recommended to start with a low overclock then increase in steps. If an overclock results in instability, set lower values here, then reboot the system entirely via the "Network Settings" 				  page.<br><br>
 			  All values (other than fan speed and power limits) are entered as offset and must be whole integers. You can decrease clockspeed by using a negative number, in my case I run around -100 core 				  offset on my GTX 1060's.<br><br>
-			  Power limits are set in watts, fan speed is set in percent. (NOTE: Do not enter the "%" sign in the form, only the value) If you lower the power limit too far it's likely to cause the card to 	 			  throttle. In order to disable Power Limit setting after it has been enabled, you must disable, then reboot - easier to just set higher if that's what you desire.<br>
+			  Power limits are set in watts, fan speed is set in percent. (NOTE: Do not enter the "%" sign in the form, only the value) If you lower the power limit too far it's likely to cause the card to 	 			  throttle. In order to disable Power Limit setting after it has been enabled, you must disable, then reboot - easier to just set higher if that's what you desire.<br><br>
+			  Rarely there is an occasion where not all overclocking settings are applied, if this occurs, just come back to this page and submit again. After a reboot, if you applied OC settings, they will return within 5 min of boot, please do not worry if they return to stock at boot time.<br>
 			  </h5>
 			  </div>
 		 </div>

@@ -17,6 +17,13 @@
     <link href="assets/css/custom.css" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <style type="text/css">
+  	.mobileShow { display: none;}
+   	/* Smartphone Portrait and Landscape */
+   	@media only screen
+   	and (min-device-width : 320px)
+   	and (max-device-width : 480px){ .mobileShow { display: inline;}}
+    </style>
 </head>
 <body>
      
@@ -71,7 +78,22 @@
                     <div class="col-lg-12">
                      <h2>Pool Status</h2>   
                     </div>
-                </div>              
+                </div>
+	<!-- /. MOBILE NAV  -->        
+	<div class="mobileShow">
+	<div class="dropdown">
+  	<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Menu
+  	<span class="caret"></span></button>
+  	<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+   	<li role="presentation"><a role="menuitem" href="index.php">Monitor</a></li>
+  	<li role="presentation"><a role="menuitem" href="settings.php">Miner Settings</a></li>
+   	<li role="presentation"><a role="menuitem" href="poolstatus.php">Pool Status</a></li>
+    	<li role="presentation"><a role="menuitem" href="overclock.php">Overclocking</a></li>
+    	<li role="presentation"><a role="menuitem" href="networksettings.php">Network Settings</a></li>
+    	<li role="presentation"><a role="menuitem" href="http://www.reddit.com/r/nvezos">Help/Subreddit</a></li>
+  	</ul>
+	</div>
+	</div>      				
                  <!-- /. ROW  -->
                   <hr />
                 <div class="row">
