@@ -24,6 +24,8 @@ You will also need to insure your monitor is connected to the primary GPU. Once 
 
 3) After the install is complete and you are booted into the gnome graphical environment, open a terminal (Click activities, then start typing terminal) and run the following commands.
 
+hostname -I (This will show your DHCP IP address, note it in case you step away and miss the script finishing)
+
 sudo apt-get -y install git
 
 cd /
@@ -41,7 +43,13 @@ NOTE: During the script, the nvidia driver may prompt you to select the display 
 NOTE: You may see various errors/warnings throughout the script, unless it halts, please ignore these - the ethminer build particularly tends to have several warnings/errors.
 NOTE: This script is quite lengthy and may take up to 30 minutes or so to run, dont abort if something appears to hang for several minutes.
 
-4) At this point the miner will auto reboot after 60 seconds (or you can manually restart), after the reboot the system will boot and become headless (no display output). You can now disonnect your monitor from the miner, all configuration will be performed via the WebUI with backup access via SSH for debugging/advanced config.
+4) At this point the miner will auto reboot after 60 seconds (or you can manually restart), after the reboot the system will boot and become headless (no display output). You can now disonnect your monitor from the miner, all configuration will be performed via the WebUI with backup access via SSH for debugging/advanced config. The WebUI will be available at https://dhcpipaddress default login credentials are below. I highly recommend changing the password on the Network Settings page.
+
+Default Credentials -
+
+User - miner
+
+Password - nvezos
 
 Finally, this is the install procedure for now. When a public version is release I tend to put it all in a neatly packed ISO.
 
