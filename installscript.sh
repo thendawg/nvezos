@@ -88,7 +88,7 @@ systemctl daemon-reload
 # Set Default WebUI Password
 echo nvezos | htpasswd -c -i /nvezos/set/password/passwords miner
 
-# Make some directories/files and fix nvezos Ownership and Permissions
+# Make some directories/files
 mkdir /nvezos/logs/
 mkdir /nvezos/set/
 mkdir /nvezos/set/gpu/
@@ -100,6 +100,11 @@ touch /nvezos/set/status/currentservicename.set
 touch /nvezos/set/status/whatarewemining.set
 touch /nvezos/logs/miner.log
 touch /nvezos/set/status/defaultuser.set
+
+# Set Default WebUI Password
+echo nvezos | htpasswd -c -i /nvezos/set/password/passwords miner
+
+# Fix permissions
 chmod 777 /nvezos/set/status/defaultuser.set
 echo $USER > /nvezos/set/status/defaultuser.set
 chown -R www-data /nvezos/
@@ -123,7 +128,8 @@ rm -rf /cuda/
 echo "Installation of NvEZOS is now complete"
 echo "The miner will now be rebooted, after reboot you can customize this miner via the WebUI available at:"
 hostname -I
-read  -p "Press Enter to Restart" </dev/tty
+echo "System will now reboot in 60 seconds, or you may restart manually"
+sleep 60
 shutdown -r now
 
 
