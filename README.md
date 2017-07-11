@@ -1,6 +1,4 @@
 # nvezos
-##If you stumble upon this, it is not currently working, ETA 7-11/12##
-
 NvEZOS v.5 Beta
 
 This version is for closed release only.
@@ -49,6 +47,14 @@ NOTE: This script is quite lengthy and may take up to 30 minutes or so to run, d
 
 5) At this point it should prompt you to reboot, after the reboot the system will boot and become headless (no display output). You can now disonnect your monitor from the miner, all configuration will be performed via the WebUI with backup access via SSH for debugging/advanced config.
 
-**In some instances it may 
-
 Finally, this is the install procedure for now. When a public version is release I tend to put it all in a neatly packed ISO.
+
+**KNOWN ISSUES**
+
+1. Occasionally when setting overclock settings, not all are applied. Restarting the daemons that execute the OC scripts corrects this - still investigating although it seems it's due to conflicting X commands (Ive added some sleep commands to the script which tends to help) - if this does occur simply applying the settings again will fix it as it causes the daemons to restart.
+
+2. After applying overclocking and then rebooting the system you will notice the OC settings do not come back immediately. This is due to the daemons the initiate the settings trying to run before Xorg starts. Ive tried several targets but am unable to correct this. Ive put a workaround in place using crontab which restarts the associated daemons every 3 minutes. Thus, if you reboot the miner, your overclocking settings will return, but it could take several minutes, to apply them instantly just use the overclocking page.
+
+3. Cannot change IP via WebUI - the static address is being applied incorrectly or an interface isn't getting flushed - still working on this, expect it to be fixed soon. For now if you want to change the IP you'll have to do it via SSH.
+
+
