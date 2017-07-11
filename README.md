@@ -12,7 +12,7 @@ MEW Address - 0x3d454b7b858335805f83D30842d9f0fACd50e545
 
 Installation Instructions
 
-IMPORTANT - Your miner must be connected to the internet to run this script as it relies on other repos and git's to install all of the packages. Additionally, CUDA 8 is quite large, so during the cour
+IMPORTANT - Your miner must be connected to the internet to run this script as it relies on other repos and git's to install all of the packages. Additionally, CUDA 8 is quite large, so during the course of the install up to 2GB data may be downloaded.
 
 You will also need to insure your monitor is connected to the primary GPU. Once setup, you can disconnect it, but it does need to be on the primary GPU (not onboard) during setup.
 
