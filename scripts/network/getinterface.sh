@@ -1,2 +1,2 @@
 #!/bin/bash
-ifconfig -a | grep -Eo '^[^ ]+' | head -n 1
+nmcli connection | head -n2 | cut -d' ' -f1-3 | tail -n 1

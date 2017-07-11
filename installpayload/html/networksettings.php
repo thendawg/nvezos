@@ -99,7 +99,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="alert alert-info">
-                             This page allows you to manage the network settings. After you submit the IP changes, you should be directed to the new IP. <br> All IP changes are processed at once, so please insure all 				     settings are correct before submitting. <BR> WARNING: Improper settings on this page could cause loss of access to mining rig. Proceed carefully. 
+                             This page allows you to manage the network settings. A full reboot is required to apply any IP or hostname changes.<br> All IP changes are processed at once, so please insure all IP settings are correct before submitting. <BR> WARNING: Improper settings on this page could cause loss of access to mining rig. Proceed carefully. 
                         </div>                       
                     </div>
 		</div>
@@ -115,16 +115,17 @@
 			    </div>
                             <div class="panel-body">
 			    <div class="text-center">Set IP Type:<br>
-               	    <form name="ipsettings" method="POST" ACTION ="null.php">
+               	    <form name="ipsettings" method="POST" ACTION ="setip.php">
 				<input type="radio" name="ipselector" value="dhcp"> DHCP <br>
 				<input type="radio" name="ipselector" value="static"> Static <br>
 				If set to DHCP, any settings below will not be applied. <br>
 				IP<br><input name="ipaddress" type="text" style="width: 225px;" /><br>
-				Subnet Mask<br><input name="subnetmask" type="text" style="width: 225px;" /><br>
+				Subnet Mask (Must use "/" notation see below)<br><input name="subnetmask" type="text" style="width: 225px;" /><br>
 				Gateway<br><input name="gateway" type="text" style="width: 225px;" /><br>
 				DNS Server 1<br><input name="dns1" type="text" style="width: 225px;" /><br>
 				DNS Server 2<br><input name="dns2" type="text" style="width: 225px;" /><br><br>
-				ALERT: Changing IP from WebUI is currently disabled<br><br>
+				WARNING: Subnet Mask needs to be entered in "/" notation. The most common netmask (255.255.255.0) is represented as 24 (Do not enter the actual /)
+				<br>This <a href="http://www.sput.nl/internet/cidr-routing.html">site</a> has a chart that will convert for you.<br><br>
 				<input type="submit" name="submit" value="Set and Restart Networking/Apache"><br><br>
 				</div>
 			    </form>
@@ -140,7 +141,7 @@
                             </div>
 			    </div>
                             <div class="panel-body">
-			    <div class="text-center">Enter the hostname below. <br> You MUST restart the system to apply this change.
+			    <div class="text-center">Enter the hostname below.
                 <form name="sethostname" action="sethostname.php" method="POST">
     				Hostname<br><input name="hostname" type="text" style="width: 275px;" value='<?php echo exec('hostname'); ?>'  /><br><br>
    				<input type="submit" name="submit" value="Save">

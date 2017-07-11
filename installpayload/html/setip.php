@@ -78,8 +78,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="alert alert-info">
-                             Applying IP settings... You will be redirected to the new address once the settings are updated. (Approx. 10 seconds)
-			     <br>If you encounter any issues after performing an IP change here, consider rebooting the miner.
+                             Applying IP settings... Once this is complete, you will need to reboot the miner for the changes to take effect.<br>You will be redirected to the settings page shortly where you can do this.
                         </div>                       
                     </div>
 		</div>
@@ -91,28 +90,12 @@
 		$dns2 = $_POST['dns2'];
 		$intname = exec('/nvezos/scripts/network/getinterface.sh');
 		if ($ipselection == "static") {
-			file_put_contents('/nvezos/set/network/ip.set', '# This IP config created by NvEZOS WebUI'."\n \n".
-				'source /etc/network/interfaces.d/*'."\n \n".
-				'auto lo'."\n".
-				'iface lo inet loopback'."\n \n".
-				'auto '.$intname."\n".
-				'iface '.$intname.' inet static'."\n".
-				'address '.$newip."\n".
-				'netmask '.$subnetmask."\n".
-				'gateway '.$gateway."\n".
-				'dns-nameservers '.$dns1." ".$dns2."\n"); 
-					    }
+			exec('sudo nmcli connection modify "'.$intname.'" connection.autoconnect yes ipv4.method manual ipv4.addr "'.$ipselection.'/'.$subnetmask.'" ipv4.dns "'.$dns1.', '.$dns2.'" ipv4.gateway "'.$gateway.'"');
+									}
 		elseif ($ipselection == "dhcp") {					
-			file_put_contents('/nvezos/testip.config', '# This IP config created by NvEZOS WebUI'."\n \n".
-				'source /etc/network/interfaces.d/*'."\n \n".
-				'auto lo'."\n".
-				'iface lo inet loopback'."\n \n".
-				'auto '.$intname."\n".
-				'iface '.$intname.' inet dhcp'."\n");
+			exec('sudo nmcli connection modify "'.$intname.'" connection.autoconnect yes ipv4.method auto');
 					      }
 		else { echo "Something went wrong!"; }
-		exec('/nvezos/scripts/network/applysettings.sh');
-		exec('sudo ip addr flush '.$intname.' && sudo systemctl restart networking.service');
 	?>
              <!-- /. PAGE INNER  -->
             </div>
