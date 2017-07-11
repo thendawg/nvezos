@@ -59,7 +59,7 @@ Finally, this is the install procedure for now. When a public version is release
 
 2. After applying overclocking and then rebooting the system you will notice the OC settings do not come back immediately. This is due to the daemons that initiate the settings trying to run before Xorg starts. Ive tried several targets but am unable to correct this. Ive put a workaround in place using crontab which restarts the associated daemons every 3 minutes. Thus, if you reboot the miner, your overclocking settings will return, but it could take several minutes, to apply them instantly just use the overclocking page. This also may be a lifesaver if you push the overclock a bit too far, simply reboot and make the changes within a minute or two and you should be able to catch it before they're applied.
 
-3. Cannot change IP via WebUI - the static address is being applied incorrectly or an interface isn't getting flushed - still working on this, expect it to be fixed soon. For now if you want to change the IP you'll have to do it via SSH.
+3. Cannot change IP via WebUI - the static address is being applied incorrectly or an interface isn't getting flushed - still working on this, expect it to be fixed soon. For now if you want to change the IP you'll have to do it via SSH. **As of 7/11 this should be fixed, currently testing**
 
 **OS INSTALL**
 
