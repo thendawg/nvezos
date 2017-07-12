@@ -88,9 +88,10 @@
 		$gateway = $_POST['gateway'];	
 		$dns1 = $_POST['dns1'];
 		$dns2 = $_POST['dns2'];
+		$ip = $_POST['ipaddress'];
 		$intname = exec('/nvezos/scripts/network/getinterface.sh');
 		if ($ipselection == "static") {
-			exec('sudo nmcli connection modify "'.$intname.'" connection.autoconnect yes ipv4.method manual ipv4.addr "'.$ipselection.'/'.$subnetmask.'" ipv4.dns "'.$dns1.', '.$dns2.'" ipv4.gateway "'.$gateway.'"');
+			exec('sudo nmcli connection modify "'.$intname.'" connection.autoconnect yes ipv4.method manual ipv4.addr "'.$ip.'/'.$subnetmask.'" ipv4.dns "'.$dns1.', '.$dns2.'" ipv4.gateway "'.$gateway.'"');
 									}
 		elseif ($ipselection == "dhcp") {					
 			exec('sudo nmcli connection modify "'.$intname.'" connection.autoconnect yes ipv4.method auto');
