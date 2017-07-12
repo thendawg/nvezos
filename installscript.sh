@@ -1,5 +1,6 @@
 !#/bin/bash
-
+{
+set -x
 # Install SSH Daemon for management first
 apt-get -y install openssh-server
 
@@ -130,5 +131,6 @@ hostname -I
 echo "System will now reboot in 60 seconds, or you may restart manually"
 sleep 60
 shutdown -r now
-
+set +x
+} &> tee /nvezos/install.log 
 

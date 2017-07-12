@@ -126,7 +126,7 @@
 				DNS Server 2<br><input name="dns2" type="text" style="width: 225px;" /><br><br>
 				WARNING: Subnet Mask needs to be entered in "/" notation. The most common netmask (255.255.255.0) is represented as 24 (Do not enter the actual /)
 				<br>This <a href="http://www.sput.nl/internet/cidr-routing.html">site</a> has a chart that will convert for you.<br><br>
-				<input type="submit" name="submit" value="Set and Restart Networking/Apache"><br><br>
+				<input type="submit" name="submit" value="Set IP"><br><br>
 				</div>
 			    </form>
                             </div>
