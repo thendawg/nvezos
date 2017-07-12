@@ -77,6 +77,8 @@ Once you set the mining path you'll need to set the service at the top of the mi
 
 4. Added script to rebuild xorg.conf in case it gets borked at install or new GPU's are added. It can be ran from the Overclocking page in the WebUI.
 
+5. See HOWTOUPDATE for instructions on how to apply the update to an existing install.
+
 **OS INSTALL**
 
 1) Write ISO to USB drive and make bootable. The easiest way in Windows is to use Rufus - https://rufus.akeo.ie/ - just check "Create a bootable disk using" then select ISO Image. Hit the icon to the right to select your ISO. Make sure Quick Format and Create extended labels are checked.
