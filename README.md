@@ -3,7 +3,7 @@ NvEZOS v.6 Beta
 
 This version is for closed release only.
 
-NvEZOS is an nVidia GPU Mining OS based on Ubuntu-GNOME 16.04 LTS. It is configurable completely from webUI and features the latest genoil CUDA ethminer. The WebUI provides an easy interface to switch between currencies you're currently mining, check hashrate, and even configure network and overclocking settings!
+NvEZOS is an nVidia GPU Mining OS based on Ubuntu-GNOME 16.04.2 LTS. It is configurable completely from webUI and features the latest genoil CUDA ethminer. The WebUI provides an easy interface to switch between currencies you're currently mining, check hashrate, and even configure network and overclocking settings!
 
 For more info checkout https://www.reddit.com/r/nvezos
 
@@ -18,7 +18,7 @@ MEW Address - 0x3d454b7b858335805f83D30842d9f0fACd50e545
 
 You will also need to insure your monitor is connected to the primary GPU. Once setup, you can disconnect it, but it does need to be on the primary GPU (not onboard) during setup.
 
-1) Download Ubuntu-GNOME 16.04 LTS Iso Here - http://cdimage.ubuntu.com/ubuntu-gnome/releases/16.04/release/
+1) Download Ubuntu-GNOME 16.04.2 LTS Iso Here - http://cdimage.ubuntu.com/ubuntu-gnome/releases/16.04/release/
 
 2) Install Ubuntu-GNOME as normal (I recommend not installing 3rd party software, or checking any of the other optional elements as it could cause a potential driver conflict - For detailed instructions, see "OS Install" at the bottom)
 
