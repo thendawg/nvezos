@@ -1,9 +1,10 @@
-!#/bin/bash
+#!/bin/bash
 
 # Move new php/web files into place
 /bin/cp -rf /nvupdate/nvezos/installpayload/html/ /var/www/
 # Update scripts
-/bin/cp -rf /nvupdate/nvezos/scripts/ /nvezos/
+/bin/cp -rf /nvupdate/nvezos/scripts/network/getinterface.sh /nvezos/scripts/network/
+/bin/cp -rf /nvupdate/nvezos/scripts/gpu/fixgpu.sh /nvezos/scripts/gpu/
 # Fix permissions again
 chown -R www-data /nvezos/
 chmod -R 755 /nvezos/

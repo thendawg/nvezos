@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 # Install SSH Daemon for management first
 apt-get -y install openssh-server
