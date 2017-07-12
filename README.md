@@ -1,5 +1,5 @@
 # nvezos
-NvEZOS v.5 Beta
+NvEZOS v.6 Beta
 
 This version is for closed release only.
 
@@ -55,17 +55,27 @@ Password - nvezos
 
 Finally, this is the install procedure for now. When a public version is release I tend to put it all in a neatly packed ISO.
 
+**NOTES**
+
+To start mining, go to the settings page and setup the miner command for one of the miners. This is the command you use typically to start the miner, such as ethminer --farm-recheck 200 -U -S us2.ethermine.org:4444 -O <Your_Ethereum_Address>.<RigName> except in this case, you must provide the full path to ethminer. Unless you modified the file system after install, this will stay the same. The path is /ethminer/cpp-ethereum/build/ethminer/ethminer - so using our previous example command you would enter - /ethminer/cpp-ethereum/build/ethminer/ethminer --farm-recheck 200 -U -S us2.ethermine.org:4444 -O <Your_Ethereum_Address>.<RigName>
+
+Once you set the mining path you'll need to set the service at the top of the miner page and hit "Set and Restart Mining Service". Additional documentation will be added as I can, although the Network Settings and Overclocking pages are pretty well documented within.
+
 **KNOWN ISSUES**
 
 1. Occasionally when setting overclock settings, not all are applied. Restarting the daemons that execute the OC scripts corrects this - still investigating although it seems it's due to conflicting X commands (Ive added some sleep commands to the script which tends to help) - if this does occur simply applying the settings again will fix it as it causes the daemons to restart.
 
 2. After applying overclocking and then rebooting the system you will notice the OC settings do not come back immediately. This is due to the daemons that initiate the settings trying to run before Xorg starts. Ive tried several targets but am unable to correct this. Ive put a workaround in place using crontab which restarts the associated daemons every 3 minutes. Thus, if you reboot the miner, your overclocking settings will return, but it could take several minutes, to apply them instantly just use the overclocking page. This also may be a lifesaver if you push the overclock a bit too far, simply reboot and make the changes within a minute or two and you should be able to catch it before they're applied.
 
-**NOTES**
+**v.6 UPDATE**
+ 
+1. Fixed network ip script - you can now change the IP via the WebUI as intended (now using a command to set IP via Network Manager rather than disabling it, seems to work much better)
 
-To start mining, go to the settings page and setup the miner command for one of the miners. This is the command you use typically to start the miner, such as ethminer --farm-recheck 200 -U -S us2.ethermine.org:4444 -O <Your_Ethereum_Address>.<RigName> except in this case, you must provide the full path to ethminer. Unless you modified the file system after install, this will stay the same. The path is /ethminer/cpp-ethereum/build/ethminer/ethminer - so using our previous example command you would enter - /ethminer/cpp-ethereum/build/ethminer/ethminer --farm-recheck 200 -U -S us2.ethermine.org:4444 -O <Your_Ethereum_Address>.<RigName>
+2. Updated version number on all pages.
 
-Once you set the mining path you'll need to set the service at the top of the miner page and hit "Set and Restart Mining Service". Additional documentation will be added as I can, although the Network Settings and Overclocking pages are pretty well documented within.
+3. Clarified command usage on miner settings page.
+
+4. Added script to rebuild xorg.conf in case it gets borked at install or new GPU's are added. It can be ran from the Overclocking page in the WebUI.
 
 **OS INSTALL**
 
