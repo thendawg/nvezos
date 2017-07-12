@@ -22,7 +22,7 @@ You will also need to insure your monitor is connected to the primary GPU. Once 
 
 2) Install Ubuntu-GNOME as normal (I recommend not installing 3rd party software, or checking any of the other optional elements as it could cause a potential driver conflict - For detailed instructions, see "OS Install" at the bottom)
 
-**EXTREMELY IMPORTANT** If you want the overclocking function to work, the user you setup must be set to "Auto-login" this provides an X session for our scripts to bind to. This shouldn't be much of a concern as once setup is complete, there will be no display output from the GPU anyways. 
+**EXTREMELY IMPORTANT** If you want the overclocking function to work, the user you setup must be set to "Auto-login" this provides an X session for our scripts to bind to. 
 
 3) After the install is complete and you are booted into the gnome graphical environment, open a terminal (Click activities, then start typing terminal) and run the following commands.
 
@@ -45,7 +45,7 @@ NOTE: During the script, the nvidia driver may prompt you to select the display 
 NOTE: You may see various errors/warnings throughout the script, unless it halts, please ignore these - the ethminer build particularly tends to have several warnings/errors.
 NOTE: This script is quite lengthy and may take up to 30 minutes or so to run, dont abort if something appears to hang for several minutes.
 
-4) At this point the miner will auto reboot after 60 seconds (or you can manually restart), after the reboot the system will boot and become headless (no display output). You can now disonnect your monitor from the miner, all configuration will be performed via the WebUI with backup access via SSH for debugging/advanced config. The WebUI will be available at https://dhcpipaddress default login credentials are below. I highly recommend changing the password on the Network Settings page.
+4) At this point the miner will auto reboot after 60 seconds (or you can manually restart). You can now disonnect your monitor from the miner, all configuration will be performed via the WebUI with backup access via SSH for debugging/advanced config. The WebUI will be available at https://dhcpipaddress default login credentials are below. I highly recommend changing the password on the Network Settings page.
 
 Default Credentials -
 
@@ -81,7 +81,7 @@ Once you set the mining path you'll need to set the service at the top of the mi
 
 6) Confirm the disk changes, set your time zone, and setup your user account with password. DO NOT CHECK ENCRYPT HOME FOLDER. Also you must set this user to auto-login (see note below). This user is seperate from the WebUI user, feel free to make them the same, but the passwords wont be linked.
 
-**EXTREMELY IMPORTANT** If you want the overclocking function to work, the user you setup must be set to "Auto-login" this provides an X session for our scripts to bind to. This shouldn't be much of a concern as once setup is complete, there will be no display output from the GPU anyways. 
+**EXTREMELY IMPORTANT** If you want the overclocking function to work, the user you setup must be set to "Auto-login" this provides an X session for our scripts to bind to. 
 
 7) Installation should complete on its own, it will prompt you to reboot. Ive noticed the reboot screen often hangs, if it does, just power cycle the system - I've never had an issue.
 
