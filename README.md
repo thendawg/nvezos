@@ -12,6 +12,8 @@ MEW Address - 0x3d454b7b858335805f83D30842d9f0fACd50e545
 
 **INSTALLATION INSTRUCTIONS**
 
+**IMPORTANT** The total size of the install is around 9GB. Due to expansion of the CUDA8 deb during install, around 11.5-12GB are needed, thus I recommend a minimum root partition of 12GB.
+
 **IMPORTANT** Your miner must be connected to the internet to run this script as it relies on other repos and git's to install all of the packages. Additionally, CUDA 8 is quite large, so during the course of the install up to 2GB data may be downloaded.
 
 You will also need to insure your monitor is connected to the primary GPU. Once setup, you can disconnect it, but it does need to be on the primary GPU (not onboard) during setup.
@@ -58,6 +60,12 @@ Finally, this is the install procedure for now. When a public version is release
 1. Occasionally when setting overclock settings, not all are applied. Restarting the daemons that execute the OC scripts corrects this - still investigating although it seems it's due to conflicting X commands (Ive added some sleep commands to the script which tends to help) - if this does occur simply applying the settings again will fix it as it causes the daemons to restart.
 
 2. After applying overclocking and then rebooting the system you will notice the OC settings do not come back immediately. This is due to the daemons that initiate the settings trying to run before Xorg starts. Ive tried several targets but am unable to correct this. Ive put a workaround in place using crontab which restarts the associated daemons every 3 minutes. Thus, if you reboot the miner, your overclocking settings will return, but it could take several minutes, to apply them instantly just use the overclocking page. This also may be a lifesaver if you push the overclock a bit too far, simply reboot and make the changes within a minute or two and you should be able to catch it before they're applied.
+
+**NOTES**
+
+To start mining, go to the settings page and setup the miner command for one of the miners. This is the command you use typically to start the miner, such as ethminer --farm-recheck 200 -U -S us2.ethermine.org:4444 -O <Your_Ethereum_Address>.<RigName> except in this case, you must provide the full path to ethminer. Unless you modified the file system after install, this will stay the same. The path is /ethminer/cpp-ethereum/build/ethminer/ethminer - so using our previous example command you would enter - /ethminer/cpp-ethereum/build/ethminer/ethminer --farm-recheck 200 -U -S us2.ethermine.org:4444 -O <Your_Ethereum_Address>.<RigName>
+
+Once you set the mining path you'll need to set the service at the top of the miner page and hit "Set and Restart Mining Service". Additional documentation will be added as I can, although the Network Settings and Overclocking pages are pretty well documented within.
 
 **OS INSTALL**
 
