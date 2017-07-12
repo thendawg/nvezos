@@ -165,7 +165,7 @@
                             </div>
 			    </div>
                             <div class="panel-body">
-			    <div class="text-center">This controls the ethminer command for each coin you wish to mine. Enter the full command including the path to ethminer.<br>The default path is /ethminer/cpp-ethereum/build/ethminer/ethminer (and should be populated in the box below by default)
+			    <div class="text-center">This controls the ethminer command for each coin you wish to mine. Enter the full command including the path to ethminer.<br>The default path is /ethminer/cpp-ethereum/build/ethminer/ethminer<br>EXAMPLE: /ethminer/cpp-ethereum/build/ethminer/ethminer --farm-recheck 200 -U -S us2.ethermine.org:4444 -O Your_Ethereum_Address.RigName
                             <form action="savecommands.php" method="POST">
     				Eth<br><input name="ethcommand" type="text" style="width: 700px;" value='<?php echo exec('cat /nvezos/logs/ethcommandbox.log'); ?>'  /><br>
     				Music<br><input name="musiccommand" type="text" style="width: 700px;" value='<?php echo exec('cat /nvezos/logs/musiccommandbox.log'); ?>' /><br>

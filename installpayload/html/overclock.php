@@ -201,7 +201,7 @@
 			  <div class=col-lg-3>
 			  <h5>
 			  WARNING: Overclocking via this interface will ONLY function with nvidia GPU's and is performed entirely at the user's risk. <br><br>
-			  NOTE: If you're having issues with this overclock settings not applying or have added new GPU's it's likely the xorg.conf is causing the issue. Click <a href="gpufix.php">HERE</a> to run a script that will rebuild xorg.conf and reboot the miner. (After clicking, the site will not reload until the reboot is complete)
+			  NOTE: If you're having issues with this overclock settings not applying or have added new GPU's it's likely the xorg.conf is causing the issue. Click <a href="gpufix.php">HERE</a> to run a script that will rebuild xorg.conf and reboot the miner. (After clicking, the site will not reload until the reboot is complete)<br><br>
 			  Please note, nvidia is aware of a bug that causes the GPU not to enter it's highest power mode during compute loads, due to this the observed clocks while mining may be lower than what you set 				  here. To offset, simply increase the value here. I.E. with GTX 1060 I use a +1200 memory offset which results in an actual memory offset under a mining load of +600. <br><br>
 			   Just ignore the GPU's you dont have, they'll likely be filtered out in a future release. If you wish to disable overclocking simply set to "No" and apply settings, everything in the form will be disregarded. Fan Speed Control and Power Limit are set independently from OC control, so you can have 1, 2, or all 3.<br><br>
 			  It's recommended to start with a low overclock then increase in steps. If an overclock results in instability, set lower values here, then reboot the system entirely via the "Network Settings" 				  page.<br><br>
