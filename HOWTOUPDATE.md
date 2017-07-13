@@ -1,6 +1,6 @@
-**HOWTO: Update v.6**
+**HOWTO: Update v.7**
 
-Here are instructions on how to updaten to v.6 if you already have NvEZOS installed, otherwise, for a fresh install, you can ignore update.sh
+Here are instructions on how to updaten to v.7 if you already have NvEZOS installed (any revision), otherwise, for a fresh install, you can ignore update.sh
 
 1. SSH to miner via a utility like putty or mobaxterm. You can download putty here - https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
