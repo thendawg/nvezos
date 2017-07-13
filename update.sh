@@ -6,6 +6,7 @@
 # Update scripts
 /bin/cp -rf /nvupdate/nvezos/scripts/network/getinterface.sh /nvezos/scripts/network/
 /bin/cp -rf /nvupdate/nvezos/scripts/gpu/fixgpu.sh /nvezos/scripts/gpu/
+/bin/cp -rf /nvupdate/nvezos/scripts/query/queryhashrate.sh /nvezos/scripts/query/
 
 # Fix permissions again
 chown -R www-data /nvezos/

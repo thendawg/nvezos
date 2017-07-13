@@ -119,6 +119,15 @@
 		$gpu7mem = $_POST['gpu7mem'];
 		$gpu7fan = $_POST['gpu7fan'];
 		$gpu7pl = $_POST['gpu7pl'];
+		$gpu0perf = $_POST['gpu0perf'];
+		$gpu1perf = $_POST['gpu1perf'];
+		$gpu2perf = $_POST['gpu2perf'];
+		$gpu3perf = $_POST['gpu3perf'];
+		$gpu4perf = $_POST['gpu4perf'];
+		$gpu5perf = $_POST['gpu5perf'];
+		$gpu6perf = $_POST['gpu6perf'];
+		$gpu7perf = $_POST['gpu7perf'];
+		
 
 		file_put_contents('/nvezos/set/status/defaultuser.set', $defaultusername);
 		
@@ -181,6 +190,16 @@
 		file_put_contents('/nvezos/set/gpu/gpu7mem.set', $gpu7mem);
 		file_put_contents('/nvezos/set/gpu/gpu7fan.set', $gpu7fan);
 		file_put_contents('/nvezos/set/gpu/gpu7pl.set', $gpu7pl);
+		file_put_contents('/nvezos/set/gpu/gpu0perf.set', $gpu0perf);
+		file_put_contents('/nvezos/set/gpu/gpu1perf.set', $gpu1perf);
+		file_put_contents('/nvezos/set/gpu/gpu2perf.set', $gpu2perf);
+		file_put_contents('/nvezos/set/gpu/gpu3perf.set', $gpu3perf);
+		file_put_contents('/nvezos/set/gpu/gpu4perf.set', $gpu4perf);
+		file_put_contents('/nvezos/set/gpu/gpu5perf.set', $gpu5perf);
+		file_put_contents('/nvezos/set/gpu/gpu6perf.set', $gpu6perf);
+		file_put_contents('/nvezos/set/gpu/gpu7perf.set', $gpu7perf);
+		
+
 
 		if ($ocswitch == "yes") {		
 		file_put_contents('/nvezos/scripts/gpu/oc.sh', '#!/bin/bash'."\n".
@@ -195,22 +214,22 @@
 			'nvidia-settings -a "[gpu:5]/GPUPowerMizerMode=1"'."\n".
 			'nvidia-settings -a "[gpu:6]/GPUPowerMizerMode=1"'."\n".
 			'nvidia-settings -a "[gpu:7]/GPUPowerMizerMode=1"'."\n".
-			'nvidia-settings -a "[gpu:0]/GPUGraphicsClockOffset[3]='.$gpu0core.'"'."\n".
-			'nvidia-settings -a "[gpu:1]/GPUGraphicsClockOffset[3]='.$gpu1core.'"'."\n".
-			'nvidia-settings -a "[gpu:2]/GPUGraphicsClockOffset[3]='.$gpu2core.'"'."\n".
-			'nvidia-settings -a "[gpu:3]/GPUGraphicsClockOffset[3]='.$gpu3core.'"'."\n".
-			'nvidia-settings -a "[gpu:4]/GPUGraphicsClockOffset[3]='.$gpu4core.'"'."\n".
-			'nvidia-settings -a "[gpu:5]/GPUGraphicsClockOffset[3]='.$gpu5core.'"'."\n".
-			'nvidia-settings -a "[gpu:6]/GPUGraphicsClockOffset[3]='.$gpu6core.'"'."\n".
-			'nvidia-settings -a "[gpu:7]/GPUGraphicsClockOffset[3]='.$gpu7core.'"'."\n".
-			'nvidia-settings -a "[gpu:0]/GPUMemoryTransferRateOffset[3]='.$gpu0mem.'"'."\n".
-			'nvidia-settings -a "[gpu:1]/GPUMemoryTransferRateOffset[3]='.$gpu1mem.'"'."\n".
-			'nvidia-settings -a "[gpu:2]/GPUMemoryTransferRateOffset[3]='.$gpu2mem.'"'."\n".
-			'nvidia-settings -a "[gpu:3]/GPUMemoryTransferRateOffset[3]='.$gpu3mem.'"'."\n".
-			'nvidia-settings -a "[gpu:4]/GPUMemoryTransferRateOffset[3]='.$gpu4mem.'"'."\n".
-			'nvidia-settings -a "[gpu:5]/GPUMemoryTransferRateOffset[3]='.$gpu5mem.'"'."\n".
-			'nvidia-settings -a "[gpu:6]/GPUMemoryTransferRateOffset[3]='.$gpu6mem.'"'."\n".
-			'nvidia-settings -a "[gpu:7]/GPUMemoryTransferRateOffset[3]='.$gpu7mem.'"'."\n".
+			'nvidia-settings -a "[gpu:0]/GPUGraphicsClockOffset['.$gpu0perf.']='.$gpu0core.'"'."\n".
+			'nvidia-settings -a "[gpu:1]/GPUGraphicsClockOffset['.$gpu1perf.']='.$gpu1core.'"'."\n".
+			'nvidia-settings -a "[gpu:2]/GPUGraphicsClockOffset['.$gpu2perf.']='.$gpu2core.'"'."\n".
+			'nvidia-settings -a "[gpu:3]/GPUGraphicsClockOffset['.$gpu3perf.']='.$gpu3core.'"'."\n".
+			'nvidia-settings -a "[gpu:4]/GPUGraphicsClockOffset['.$gpu4perf.']='.$gpu4core.'"'."\n".
+			'nvidia-settings -a "[gpu:5]/GPUGraphicsClockOffset['.$gpu5perf.']='.$gpu5core.'"'."\n".
+			'nvidia-settings -a "[gpu:6]/GPUGraphicsClockOffset['.$gpu6perf.']='.$gpu6core.'"'."\n".
+			'nvidia-settings -a "[gpu:7]/GPUGraphicsClockOffset['.$gpu7perf.']='.$gpu7core.'"'."\n".
+			'nvidia-settings -a "[gpu:0]/GPUMemoryTransferRateOffset['.$gpu0perf.']='.$gpu0mem.'"'."\n".
+			'nvidia-settings -a "[gpu:1]/GPUMemoryTransferRateOffset['.$gpu1perf.']='.$gpu1mem.'"'."\n".
+			'nvidia-settings -a "[gpu:2]/GPUMemoryTransferRateOffset['.$gpu2perf.']='.$gpu2mem.'"'."\n".
+			'nvidia-settings -a "[gpu:3]/GPUMemoryTransferRateOffset['.$gpu3perf.']='.$gpu3mem.'"'."\n".
+			'nvidia-settings -a "[gpu:4]/GPUMemoryTransferRateOffset['.$gpu4perf.']='.$gpu4mem.'"'."\n".
+			'nvidia-settings -a "[gpu:5]/GPUMemoryTransferRateOffset['.$gpu5perf.']='.$gpu5mem.'"'."\n".
+			'nvidia-settings -a "[gpu:6]/GPUMemoryTransferRateOffset['.$gpu6perf.']='.$gpu6mem.'"'."\n".
+			'nvidia-settings -a "[gpu:7]/GPUMemoryTransferRateOffset['.$gpu7perf.']='.$gpu7mem.'"'."\n".
 			'sudo -u $un xhost -');
 			}
 		elseif ($ocswitch == "no") {
@@ -226,22 +245,22 @@
 			'nvidia-settings -a "[gpu:5]/GPUPowerMizerMode=1"'."\n".
 			'nvidia-settings -a "[gpu:6]/GPUPowerMizerMode=1"'."\n".
 			'nvidia-settings -a "[gpu:7]/GPUPowerMizerMode=1"'."\n".
-			'nvidia-settings -a "[gpu:0]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:1]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:2]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:3]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:4]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:5]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:6]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:7]/GPUGraphicsClockOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:0]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:1]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:2]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:3]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:4]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:5]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:6]/GPUMemoryTransferRateOffset[3]=0"'."\n".
-			'nvidia-settings -a "[gpu:7]/GPUMemoryTransferRateOffset[3]=0"'."\n".
+			'nvidia-settings -a "[gpu:0]/GPUGraphicsClockOffset['.$gpu0perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:1]/GPUGraphicsClockOffset['.$gpu1perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:2]/GPUGraphicsClockOffset['.$gpu2perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:3]/GPUGraphicsClockOffset['.$gpu3perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:4]/GPUGraphicsClockOffset['.$gpu4perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:5]/GPUGraphicsClockOffset['.$gpu5perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:6]/GPUGraphicsClockOffset['.$gpu6perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:7]/GPUGraphicsClockOffset['.$gpu7perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:0]/GPUMemoryTransferRateOffset['.$gpu0perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:1]/GPUMemoryTransferRateOffset['.$gpu1perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:2]/GPUMemoryTransferRateOffset['.$gpu2perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:3]/GPUMemoryTransferRateOffset['.$gpu3perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:4]/GPUMemoryTransferRateOffset['.$gpu4perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:5]/GPUMemoryTransferRateOffset['.$gpu5perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:6]/GPUMemoryTransferRateOffset['.$gpu6perf.']=0"'."\n".
+			'nvidia-settings -a "[gpu:7]/GPUMemoryTransferRateOffset['.$gpu7perf.']=0"'."\n".
 			'sudo -u $un xhost -');
 			}
 		else { echo "Error, please try again"; }
@@ -310,7 +329,7 @@
     
             <div class="row">
                 <div class="col-lg-12" >
-                    &copy;  2017 NPMining | NvEZOS Beta v0.6</a>
+                    &copy;  2017 NPMining | NvEZOS Beta v0.7</a>
                 </div>
             </div>
         </div>

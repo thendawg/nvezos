@@ -125,9 +125,10 @@
 				Set Power Limit? (If set to no, power limit values will be ignored)<br>
 				<input type="radio" name="plswitch" value="yes" <?php echo exec('cat /nvezos/set/gpu/plswitch.set'); ?> > Yes &nbsp;&nbsp;
 				<input type="radio" name="plswitch" value="no"<?php echo exec('cat /nvezos/set/gpu/plnoswitch.set'); ?> > No <br><br>
+				Perf Level setting corrects an issue with 1050ti overclocking. Set to 2 for any 1050ti's, set to 3 for all other GPU's.<br>
 				<table class="table table-striped table-bordered table-hover">
 					<thead>
-						<th>GPU Index</th><th>Core Offset</th><th>Memory Offset</th><th>Fan Speed</th><th>Power Limit</th>
+						<th>GPU Index</th><th>Core Offset</th><th>Memory Offset</th><th>Fan Speed</th><th>Power Limit</th><th>Perf Level</th>
 					</thead>
 					<tbody>
 					<tr>
@@ -136,6 +137,7 @@
 						<td><input name="gpu0mem" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu0mem.set'); ?>'  /></td>
 						<td><input name="gpu0fan" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu0fan.set'); ?>'  /></td>
 						<td><input name="gpu0pl" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu0pl.set'); ?>'  /></td>
+						<td><input name="gpu0perf" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu0perf.set'); ?>'  /></td>
 					</tr>
 					<tr>
 						<td>1</td>
@@ -143,6 +145,7 @@
 						<td><input name="gpu1mem" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu1mem.set'); ?>'  /></td>
 						<td><input name="gpu1fan" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu1fan.set'); ?>'  /></td>
 						<td><input name="gpu1pl" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu1pl.set'); ?>'  /></td>
+						<td><input name="gpu1perf" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu1perf.set'); ?>'  /></td>
 					</tr>
 					<tr>
 						<td>2</td>
@@ -150,6 +153,7 @@
 						<td><input name="gpu2mem" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu2mem.set'); ?>'  /></td>
 						<td><input name="gpu2fan" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu2fan.set'); ?>'  /></td>
 						<td><input name="gpu2pl" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu2pl.set'); ?>'  /></td>
+						<td><input name="gpu2perf" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu2perf.set'); ?>'  /></td>
 					</tr>
 					<tr>
 						<td>3</td>
@@ -157,6 +161,7 @@
 						<td><input name="gpu3mem" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu3mem.set'); ?>'  /></td>
 						<td><input name="gpu3fan" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu3fan.set'); ?>'  /></td>
 						<td><input name="gpu3pl" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu3pl.set'); ?>'  /></td>
+						<td><input name="gpu3perf" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu3perf.set'); ?>'  /></td>
 					</tr>
 					<tr>
 						<td>4</td>
@@ -164,6 +169,7 @@
 						<td><input name="gpu4mem" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu4mem.set'); ?>'  /></td>
 						<td><input name="gpu4fan" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu4fan.set'); ?>'  /></td>
 						<td><input name="gpu4pl" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu4pl.set'); ?>'  /></td>
+						<td><input name="gpu4perf" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu4perf.set'); ?>'  /></td>
 					</tr>
 					<tr>
 						<td>5</td>
@@ -171,6 +177,7 @@
 						<td><input name="gpu5mem" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu5mem.set'); ?>'  /></td>
 						<td><input name="gpu5fan" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu5fan.set'); ?>'  /></td>
 						<td><input name="gpu5pl" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu5pl.set'); ?>'  /></td>
+						<td><input name="gpu5perf" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu5perf.set'); ?>'  /></td>
 					</tr>
 					<tr>
 						<td>6</td>
@@ -178,6 +185,7 @@
 						<td><input name="gpu6mem" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu6mem.set'); ?>'  /></td>
 						<td><input name="gpu6fan" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu6fan.set'); ?>'  /></td>
 						<td><input name="gpu6pl" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu6pl.set'); ?>'  /></td>
+						<td><input name="gpu6perf" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu6perf.set'); ?>'  /></td>
 					</tr>
 					<tr>
 						<td>7</td>
@@ -185,6 +193,7 @@
 						<td><input name="gpu7mem" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu7mem.set'); ?>'  /></td>
 						<td><input name="gpu7fan" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu7fan.set'); ?>'  /></td>
 						<td><input name="gpu7pl" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu7pl.set'); ?>'  /></td>
+						<td><input name="gpu7perf" type="text" style="width: 70px;" value='<?php echo exec('cat /nvezos/set/gpu/gpu7perf.set'); ?>'  /></td>
 					</tr>
 					</tbody>
 				</table>
@@ -220,7 +229,7 @@
     
             <div class="row">
                 <div class="col-lg-12" >
-                    &copy;  2017 NPMining | NvEZOS Beta v0.6</a>
+                    &copy;  2017 NPMining | NvEZOS Beta v0.7</a>
                 </div>
             </div>
         </div>
