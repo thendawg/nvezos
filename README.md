@@ -18,7 +18,7 @@ MEW Address - 0x3d454b7b858335805f83D30842d9f0fACd50e545
 
 You will also need to insure your monitor is connected to the primary GPU. Once setup, you can disconnect it, but it does need to be on the primary GPU (not onboard) during setup.
 
-1) Download Ubuntu-GNOME 16.04.2 LTS Iso Here - http://cdimage.ubuntu.com/ubuntu-gnome/releases/16.04/release/
+1) Download Ubuntu-GNOME 16.04.2 LTS Iso Here - http://cdimage.ubuntu.com/ubuntu-gnome/releases/16.04/release/ubuntu-gnome-16.04.2-desktop-amd64.iso/
 
 2) Install Ubuntu-GNOME as normal (I recommend not installing 3rd party software, or checking any of the other optional elements as it could cause a potential driver conflict - For detailed instructions, see "OS Install" at the bottom)
 
