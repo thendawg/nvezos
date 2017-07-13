@@ -1,5 +1,5 @@
 # nvezos
-NvEZOS v.6 Beta
+NvEZOS v.7 Beta
 
 This version is for closed release only.
 
@@ -77,7 +77,13 @@ Once you set the mining path you'll need to set the service at the top of the mi
 
 4. Added script to rebuild xorg.conf in case it gets borked at install or new GPU's are added. It can be ran from the Overclocking page in the WebUI.
 
-5. See HOWTOUPDATE for instructions on how to apply the update to an existing install.
+**v.7 UPDATE**
+
+1. Fixed issue where hashrate over 99 would cause the 1 to get cut off.
+
+2. Added "Perf Level" option to overclocking section as the 1050ti requires the set perf level to be 2 instead of 3, otherwise settings aren't applied - plan to auto-detect in the future, but this works for now.
+
+3. See HOWTOUPDATE for instructions on how to apply the update to an existing install.
 
 **OS INSTALL**
 
