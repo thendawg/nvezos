@@ -1,0 +1,13 @@
+[Unit]
+Description=Init Script - Run once
+After=graphical.target	
+
+[Service]
+User=root
+ExecStart=/nvezos/scripts/system/runonce.sh
+RemainAfterExit=yes
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
+
