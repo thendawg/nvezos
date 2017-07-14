@@ -86,9 +86,7 @@ echo "gpuservice  ALL=(ALL:ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)
 
 # Cleanup
 rm -rf /nvezos/installpayload/
-systemctl stop runonce.service
 systemctl disable runonce.service
-mv /nvezos/scripts/system/runonce.sh /nvezos/scripts/system/runoncedisabled.sh
 
 # Install is complete - let's reboot'
 echo "Installation of NvEZOS is now complete"
