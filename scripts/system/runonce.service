@@ -1,6 +1,6 @@
 [Unit]
 Description=Init Script - Run once
-After=graphical.target	
+After=network.target	
 
 [Service]
 User=root
