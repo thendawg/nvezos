@@ -89,10 +89,7 @@ rm -rf /nvezos/installpayload/
 systemctl disable runonce.service
 
 # Install is complete - let's reboot'
-echo "Installation of NvEZOS is now complete"
-echo "The miner will now be rebooted, after reboot you can customize this miner via the WebUI available at:"
-hostname -I
-echo "System will now reboot in 60 seconds, or you may restart manually"
-sleep 60
+
+sleep 10
 shutdown -r now
 
