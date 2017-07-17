@@ -178,9 +178,10 @@
                             </div>
 			    </div>
                             <div class="panel-body">
-			    <div class="text-center">Enter new password below.<br>The WebUI will likely timeout after hitting enter, simply reconnect after a few seconds with the new password.
+			    <div class="text-center">You will be prompted to enter the new credentials after submitting and then redirected to the Monitoring page.<br><br>Enter new password below.
                             <form action="changepw.php" method="POST">
-    				<input name="newpw" type="password" style="width: 180px;" /><br><br>
+    				<input name="newpw" type="password" style="width: 180px;" /><br>Confirm Password<br>
+				<input name="pwconf" type="password" style="width: 180px;" /><br><br>
    				<input type="submit" name="submit" value="Change Password">
 			    </form>
 			    </div>

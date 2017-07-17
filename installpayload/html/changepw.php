@@ -85,9 +85,11 @@
 		</div>
 	<?php
 		$newpw = $_POST['newpw'];
-		exec('echo '.$newpw.' | htpasswd -c -i /nvezos/set/password/passwords miner');
-		sleep(2);
-		exec('/nvezos/scripts/system/restartapache.sh');		 
+		$pwconf = $_POST['pwconf'];
+		if ($newpw == $pwconf) {
+		exec('echo '.$newpw.' | htpasswd -c -i /nvezos/set/password/passwords miner');	
+					}
+		else { echo "Password change failed - Passwords do not match"; }	 
 	?>
              <!-- /. PAGE INNER  -->
             </div>

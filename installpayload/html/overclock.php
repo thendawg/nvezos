@@ -201,7 +201,7 @@
 				Enter default username below (The one you setup at install - this is needed to attach to it's X session)<br>
 				<input name="defaultusername" type="text" style="width: 110px;" value='<?php echo exec('cat /nvezos/set/status/defaultuser.set'); ?>'  />
 				<br><br>
-				The next page may take 10s or so to load, please do not cancel.<br>
+				The next page may take 10s or so to load, you will then be redirected, please do not cancel or refresh.<br>
 				<input type="submit" name="submit" value="Save and Apply OC">					
 			    </form>
 				</div>
