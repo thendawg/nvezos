@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Wait for system to finish booting
-sleep 30
+sleep 75
 
 # Install SSH Daemon for management first
 apt-get -y install openssh-server
@@ -90,6 +90,6 @@ systemctl disable runonce.service
 
 # Install is complete - let's reboot'
 
-sleep 10
+sleep 30
 shutdown -r now
 
