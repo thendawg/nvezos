@@ -1,5 +1,5 @@
 # nvezos
-NvEZOS v.7 Beta
+NvEZOS v.8 Beta
 
 This version is for closed release only.
 
@@ -61,11 +61,11 @@ To start mining, go to the settings page and setup the miner command for one of 
 
 Once you set the mining path you'll need to set the service at the top of the miner page and hit "Set and Restart Mining Service". Additional documentation will be added as I can, although the Network Settings and Overclocking pages are pretty well documented within.
 
+After applying overclocking and then rebooting the system you will notice the OC settings do not come back immediately. This is due to the daemons that initiate the settings trying to run before Xorg starts. Ive tried several targets but am unable to correct this. Ive put a workaround in place using crontab which restarts the associated daemons every 3 minutes. Thus, if you reboot the miner, your overclocking settings will return, but it could take several minutes, to apply them instantly just use the overclocking page. This also may be a lifesaver if you push the overclock a bit too far, simply reboot and make the changes within a minute or two and you should be able to catch it before they're applied.
+
 **KNOWN ISSUES**
 
-1. Occasionally when setting overclock settings, not all are applied. Restarting the daemons that execute the OC scripts corrects this - still investigating although it seems it's due to conflicting X commands (Ive added some sleep commands to the script which tends to help) - if this does occur simply applying the settings again will fix it as it causes the daemons to restart.
-
-2. After applying overclocking and then rebooting the system you will notice the OC settings do not come back immediately. This is due to the daemons that initiate the settings trying to run before Xorg starts. Ive tried several targets but am unable to correct this. Ive put a workaround in place using crontab which restarts the associated daemons every 3 minutes. Thus, if you reboot the miner, your overclocking settings will return, but it could take several minutes, to apply them instantly just use the overclocking page. This also may be a lifesaver if you push the overclock a bit too far, simply reboot and make the changes within a minute or two and you should be able to catch it before they're applied.
+1. Occasionally when setting overclock settings, not all are applied. Restarting the daemons that execute the OC scripts corrects this - still investigating although it seems it's due to conflicting X commands (Ive added some sleep commands to the script which tends to help) - if this does occur simply applying the settings again will fix it as it causes the daemons to restart. **WORKAROUND IN PLACE** - crontab executes a script every 3 minutes that reapplies the OC settings, this insures the OC settings are reapplied after reboot and reset if for some reason one gpu didnt respond to the previous setting. 
 
 **v.6 UPDATE**
  
@@ -83,7 +83,15 @@ Once you set the mining path you'll need to set the service at the top of the mi
 
 2. Added "Perf Level" option to overclocking section as the 1050ti requires the set perf level to be 2 instead of 3, otherwise settings aren't applied - plan to auto-detect in the future, but this works for now.
 
-3. See HOWTOUPDATE for instructions on how to apply the update to an existing install.
+**v.8 UPDATE**
+
+1. Added password confirmation to ensure typo's do not break WebUI password.
+
+2. Changed pw change method so that it is much quicker to reconnect.
+
+3. Finished scripting to create an iso for public distribution. I anticipate v1.0 Public BETA will be available by 7/18. This will include a MUCH easier install process to be detailed shortly. 
+
+4. See HOWTOUPDATE for instructions on how to apply the update to any existing install.
 
 **OS INSTALL**
 
