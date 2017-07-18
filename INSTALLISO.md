@@ -6,7 +6,7 @@ ISO Link - https://drive.google.com/open?id=0BzfJzE5EOPsUTkJweTNqZHRvUHM
 
 **INSTALL REQUIREMENTS**
 
-1 .Nvidia GPU(s) - None of the overclocking or monitoring functions will work with AMD
+1. Nvidia GPU(s) - None of the overclocking or monitoring functions will work with AMD
 
 2. At least 2GB Ram
 
