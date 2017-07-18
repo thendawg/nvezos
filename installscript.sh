@@ -119,6 +119,8 @@ echo "gpuservice  ALL=(ALL:ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)
 # Cleanup
 rm -rf /nvezos/installpayload/
 rm -rf /cuda/
+mv /var/www/html/index.php /var/www/html/indexold.php
+mv /var/www/html/indexready.php /var/www/html/index.php
 
 # Install is complete - let's reboot'
 echo "Installation of NvEZOS is now complete"
