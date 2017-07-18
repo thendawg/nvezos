@@ -1,7 +1,7 @@
 # nvezos
 NvEZOS v.8 Beta
 
-This version is for closed release only.
+This is a public release BETA.
 
 NvEZOS is an nVidia GPU Mining OS based on Ubuntu-GNOME 16.04.2 LTS. It is configurable completely from webUI and features the latest genoil CUDA ethminer. The WebUI provides an easy interface to switch between currencies you're currently mining, check hashrate, and even configure network and overclocking settings!
 
@@ -10,7 +10,11 @@ For more info checkout https://www.reddit.com/r/nvezos
 This software is available for free use, however, donations are always appreciated!
 MEW Address - 0x3d454b7b858335805f83D30842d9f0fACd50e545
 
-**INSTALLATION INSTRUCTIONS**
+**PREBUILT ISO NOW AVAILABLE!!! SEE INSTALLISO.MD!!!**
+
+It is now recommended to install NvEZOS via the ISO image. This will greatly simplify and speedup the install process. For ISO install instructions and the link, please see INSTALLISO.MD. The installation instructions below will still work, and both versions will be kept up to date, so it is up to you. This page will still serve as the primary documentation for Notes, Known Issues, and Release Notes.
+
+**OLD INSTALLATION INSTRUCTIONS**
 
 **IMPORTANT** The total size of the install is around 9GB. Due to expansion of the CUDA8 deb during install, around 11.5-12GB are needed, thus I recommend a minimum root partition of 12GB.
 
