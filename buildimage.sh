@@ -42,6 +42,7 @@ rm -rf /cuda/
 /bin/cp -f /nvezos/scripts/system/runonce.service /etc/systemd/system/
 chmod 755 /etc/systemd/system/runonce.service
 chmod 755 /nvezos/scripts/system/runonce.sh
+systemctl daemon-reload
 
 # Install is complete
 echo "Installation of NvEZOS image prebuild is now complete"
