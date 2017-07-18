@@ -8,8 +8,10 @@
     </title>
 </head>
 <body>
-<center><h3>Welcome to NvEZOS</h3><br><br>
-<h6>Click <a href="activate.php">HERE</a> to initialize this miner.</h6><br>The system will appear to hang for up to 30-60 seconds then reboot, after reboot install is complete.
+<center><h4>Activating</h4><br><br>
+<?php
+exec('/nvezos/scripts/system/initialize.sh');
+?>
 <br>
 </center>
 </body>

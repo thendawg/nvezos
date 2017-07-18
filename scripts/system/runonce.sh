@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Wait for system to finish booting
-sleep 75
+sleep 20
 
 # Install SSH Daemon for management first
 apt-get -y install openssh-server
@@ -74,12 +74,6 @@ echo nvezos | htpasswd -c -i /nvezos/set/password/passwords miner
 chown -R www-data /nvezos/
 chmod -R 755 /nvezos/
 
-# Setup xorg.conf
-nvidia-xconfig -a --cool-bits=31 --allow-empty-initial-configuration
-/bin/cp -rf /nvezos/installpayload/dfp0.edid /etc/X11/
-sed -i '/Option         "AllowEmptyInitialConfiguration" "True"/a    Option         "ConnectedMonitor" "DFP-0"' /etc/X11/xorg.conf
-sed -i '/Option         "ConnectedMonitor" "DFP-0"/a    Option         "CustomEDID" "DFP-0:/etc/X11/dfp0.edid"' /etc/X11/xorg.conf
-
 # Setup passwordless sudo for www-data and gpuservice
 echo "www-data  ALL=(ALL:ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)
 echo "gpuservice  ALL=(ALL:ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)
@@ -87,9 +81,4 @@ echo "gpuservice  ALL=(ALL:ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)
 # Cleanup
 rm -rf /nvezos/installpayload/
 systemctl disable runonce.service
-
-# Install is complete - let's reboot'
-
-sleep 30
-shutdown -r now
 
