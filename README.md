@@ -72,6 +72,8 @@ After applying overclocking and then rebooting the system you will notice the OC
 
 1. Occasionally when setting overclock settings, not all are applied. Restarting the daemons that execute the OC scripts corrects this - still investigating although it seems it's due to conflicting X commands (Ive added some sleep commands to the script which tends to help) - if this does occur simply applying the settings again will fix it as it causes the daemons to restart. **WORKAROUND IN PLACE** - crontab executes a script every 3 minutes that reapplies the OC settings, this insures the OC settings are reapplied after reboot and reset if for some reason one gpu didnt respond to the previous setting. 
 
+2. Occasionally hashrate shows a null or incorrect value - this is due to the way it monitors hashrate via the miner log. Unfortunately I have no way of fixing this at this time, however, it typically only does this for one refresh interval, then goes back to normal. I will look into a new way to monitor hashrate that may be able to avoid this.
+
 **v.6 UPDATE**
  
 1. Fixed network ip script - you can now change the IP via the WebUI as intended (now using a command to set IP via Network Manager rather than disabling it, seems to work much better)
