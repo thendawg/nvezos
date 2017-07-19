@@ -1,5 +1,5 @@
 # nvezos
-NvEZOS v.8 Beta
+NvEZOS v.9 Beta
 
 This is a public release BETA.
 
@@ -11,6 +11,7 @@ This software is available for free use, however, donations are always appreciat
 MEW Address - 0x3d454b7b858335805f83D30842d9f0fACd50e545
 
 **PREBUILT ISO NOW AVAILABLE!!! SEE INSTALLISO.MD!!!**
+**ISO IS STILL CURRENTLY ON V.8 WILL UPDATE ONCE IT IS CHANGED WITHIN A FEW HRS**
 
 It is now recommended to install NvEZOS via the ISO image. This will greatly simplify and speedup the install process. For ISO install instructions and the link, please see INSTALLISO.MD. The installation instructions below will still work, and both versions will be kept up to date, so it is up to you. This page will still serve as the primary documentation for Notes, Known Issues, and Release Notes.
 
@@ -99,6 +100,14 @@ After applying overclocking and then rebooting the system you will notice the OC
 3. Finished scripting to create an iso for public distribution. I anticipate v1.0 Public BETA will be available by 7/18. This will include a MUCH easier install process to be detailed shortly. 
 
 4. See HOWTOUPDATE for instructions on how to apply the update to any existing install.
+
+**v.9 UPDATE**
+
+1. Added fix so that initialization script can't accidentally be ran twice resulting in missing index.php (ISO Install only)
+
+2. Added fix so that when using restart miner or gpu fix script via WebUI, the page will properly redirect so you don't get stuck on the script page, possibly causing the script to run again if it is refreshed.
+
+3. Fixed the version number at the bottom of the page as well as a few other typos.
 
 **OS INSTALL**
 
