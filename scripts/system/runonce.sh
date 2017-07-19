@@ -67,6 +67,9 @@ touch /nvezos/set/status/whatarewemining.set
 touch /nvezos/logs/miner.log
 touch /nvezos/set/status/defaultuser.set
 
+# Move EDID Into Place
+/bin/cp -rf /nvezos/installpayload/dfp0.edid /etc/X11/
+
 # Set Default WebUI Password
 echo nvezos | htpasswd -c -i /nvezos/set/password/passwords miner
 

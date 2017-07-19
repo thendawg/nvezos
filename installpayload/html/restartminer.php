@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="90;url=index.php">
+    <meta http-equiv="refresh" content="4;url=index.php">
     <title>
 	NvEZOS -  
 	<?php
@@ -81,8 +81,8 @@
 				<?php
 				$restartconf = $_POST['confirmation'];
 				if ($restartconf == "restart") { 
-					exec('/nvezos/scripts/system/restart.sh'); 
-					echo "<h4> System Rebooting... You will be redirected to the landing page after 90 seconds... </h4>";
+					exec('bash -c "exec nohup setsid /nvezos/scripts/system/restart.sh > /dev/null 2>&1 &"'); 
+					echo "<h4> Miner will reboot momentarilly... Redirecting to monitoring page. </h4>";
 								}
 				else { echo "<h4> Confirmation Check Failed, System will not be restarted... </h4>"; }
 				?>

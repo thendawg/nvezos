@@ -47,3 +47,5 @@ systemctl daemon-reload
 # Install is complete
 echo "Installation of NvEZOS image prebuild is now complete"
 
+# Things to do manually after reboot - delete xorg.conf, enable runone.service
+

@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="30;url=index.php">
+    <meta http-equiv="refresh" content="4;url=index.php">
     <title>
 	NvEZOS -  
 	<?php
@@ -78,12 +78,12 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="alert alert-info">
-                             Applying Fix... Rebooting Momentarilly...
+                             Applying Fix... System will reboot momentarilly... Redirecting to monitoring page.
                         </div>                       
                     </div>
 		</div>
 	<?php
-	exec('/nvezos/scripts/gpu/fixgpu.sh');		
+	exec('bash -c "exec nohup setsid /nvezos/scripts/gpu/fixgpu.sh > /dev/null 2>&1 &"');		
 	?>
              <!-- /. PAGE INNER  -->
             </div>
