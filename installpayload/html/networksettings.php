@@ -197,7 +197,7 @@
     
             <div class="row">
                 <div class="col-lg-12" >
-                    &copy;  2017 NPMining | NvEZOS Beta v0.7</a>
+                    &copy;  2017 NPMining | NvEZOS Beta v0.9</a>
                 </div>
             </div>
         </div>
