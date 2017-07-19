@@ -4,6 +4,8 @@ I highly advise you first thoroughly read the README.md for all notes on usage a
 
 ISO Link - https://drive.google.com/open?id=0BzfJzE5EOPsUM2xlTTVGZ3VmYVk
 
+To verify you are using the correct (most up to date) link, the filename should be nvezosv9beta.iso
+
 **INSTALL REQUIREMENTS**
 
 1. Nvidia GPU(s) - None of the overclocking or monitoring functions will work with AMD
