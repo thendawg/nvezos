@@ -1,8 +1,8 @@
-**ISO INSTALL INSTRUCTIONS BETA v.8**
+**ISO INSTALL INSTRUCTIONS BETA v.9**
 
 I highly advise you first thoroughly read the README.md for all notes on usage and various quirks you should be aware of. The WebUI also contains documentation on each page to aid in setup, I especially recommend thoroughly reading through the documentation on the right of the Overclocking page before performing any overclocking.
 
-ISO Link - https://drive.google.com/open?id=0BzfJzE5EOPsUTkJweTNqZHRvUHM
+ISO Link - https://drive.google.com/open?id=0BzfJzE5EOPsUM2xlTTVGZ3VmYVk
 
 **INSTALL REQUIREMENTS**
 
@@ -48,4 +48,4 @@ Password - nvezos
 
 12. Once connected to the WebUI, hit the link to initialize your miner, it will take a second or two, then reboot. After this reboot it should come up headless and ready to mine. Be sure to close the tab/page then reopen, do not hit refresh as it could cause a second reboot. Now you will need to configure your settings. Each page in the WebUI contains information on how to configure the settings within, however, I plan to create a detailed user guide shortly.
 
-**IMPORTANT NOTE** Any of the pages that restart the miner use an "action" php page to restart the miner (specifically the restart miner, gpu repair, and initialization scripts) - if you simply refresh this page, you will cause the action to run again, which will restart the miner again - simply close the tab/page and reopen to avoid this. **FIX COMING IN V.9 LATER TODAY 7/19**
+**IMPORTANT NOTE** Any of the pages that restart the miner use an "action" php page to restart the miner (specifically the restart miner, gpu repair, and initialization scripts) - if you simply refresh this page, you will cause the action to run again, which will restart the miner again - simply close the tab/page and reopen to avoid this. **THIS HAS BEEN FIXED IN V.9+ LEAVING NOTE FOR REFERENCE ONLY**
