@@ -98,8 +98,6 @@ After applying overclocking and then rebooting the system you will notice the OC
 
 3. Finished scripting to create an iso for public distribution. I anticipate v1.0 Public BETA will be available by 7/18. This will include a MUCH easier install process to be detailed shortly. 
 
-4. See HOWTOUPDATE for instructions on how to apply the update to any existing install.
-
 **v.9 UPDATE**
 
 1. Added fix so that initialization script can't accidentally be ran twice resulting in missing index.php (ISO Install only)
@@ -109,6 +107,8 @@ After applying overclocking and then rebooting the system you will notice the OC
 3. Fixed the version number at the bottom of the page as well as a few other typos.
 
 4. Cleaned up a few packages to improve install time by 10-15% (ISO Install only)
+
+5. See HOWTOUPDATE for instructions on how to apply the update to any existing install.
 
 **OS INSTALL**
 
