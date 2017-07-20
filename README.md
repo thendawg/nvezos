@@ -66,6 +66,8 @@ To start mining, go to the settings page and setup the miner command for one of 
 
 Once you set the mining path you'll need to set the service at the top of the miner page and hit "Set and Restart Mining Service". Additional documentation will be added as I can, although the Network Settings and Overclocking pages are pretty well documented within.
 
+When overclocking, if you push it to far and the nvidia driver crashes on one or more of the GPU's, it's extremey likely the monitoring page either won't load or will display no data, when this occurs, the only way to recover the nvidia driver in Linux is to restart the miner. You can, however, go ahead and apply new overclocking settings before restarting to insure the lower clocks are applied after startup.
+
 After applying overclocking and then rebooting the system you will notice the OC settings do not come back immediately. This is due to the daemons that initiate the settings trying to run before Xorg starts. Ive tried several targets but am unable to correct this. Ive put a workaround in place using crontab which restarts the associated daemons every 3 minutes. Thus, if you reboot the miner, your overclocking settings will return, but it could take several minutes, to apply them instantly just use the overclocking page. This also may be a lifesaver if you push the overclock a bit too far, simply reboot and make the changes within a minute or two and you should be able to catch it before they're applied.
 
 **KNOWN ISSUES**
