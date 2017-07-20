@@ -2,6 +2,8 @@
 
 # Move new php/web files into place
 /bin/cp -rf /nvupdate/nvezos/installpayload/html/ /var/www/
+mv -f /var/www/html/index.php /var/www/html/indexold.php
+mv -f /var/www/html/indexready.php /var/www/html/index.php
 
 # Update scripts
 /bin/cp -rf /nvupdate/nvezos/scripts/network/getinterface.sh /nvezos/scripts/network/
