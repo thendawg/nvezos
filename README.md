@@ -14,7 +14,7 @@ MEW Address - 0x3d454b7b858335805f83D30842d9f0fACd50e545
 
 It is now recommended to install NvEZOS via the ISO image. This will greatly simplify and speedup the install process. For ISO install instructions and the link, please see INSTALLISO.MD. The installation instructions below will still work, and both versions will be kept up to date, so it is up to you. This page will still serve as the primary documentation for Notes, Known Issues, and Release Notes.
 
-**OLD INSTALLATION INSTRUCTIONS**
+**LEGACY INSTALLATION INSTRUCTIONS**
 
 **IMPORTANT** The total size of the install is around 9GB. Due to expansion of the CUDA8 deb during install, around 11.5-12GB are needed, thus I recommend a minimum root partition of 12GB.
 
