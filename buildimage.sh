@@ -18,6 +18,9 @@ apt-get -y install apache2
 apt-get -y install libapache2-mod-php
 systemctl restart apache2
 
+# Install Fail2Ban
+apt-get -y install fail2ban
+
 # Setup ethminer
 apt-get -y install software-properties-common
 add-apt-repository -y ppa:ethereum/ethereum
@@ -48,4 +51,3 @@ systemctl daemon-reload
 echo "Installation of NvEZOS image prebuild is now complete"
 
 # Things to do manually after reboot - delete xorg.conf, enable runone.service
-
