@@ -1,4 +1,6 @@
 # nvezos
+NvEZOS V1.0 RELEASE is now available at https://www.nvezos.com this git is currently not updated, it will be shortly. Currently the only method to install V1.0 is via ISO on the site above. Upgrade script for beta users coming soon! Thanks!
+
 NvEZOS v.9 Beta
 
 This is a public release BETA.
