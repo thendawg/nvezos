@@ -1,14 +1,13 @@
 #!/bin/bash
 
+# Make sure git is installed
+apt-get -y install git
+
 # Install SSH Daemon for management first
 apt-get -y install openssh-server
+apt-get -y install fail2ban
 
-# Setup nVidia Drivers
-add-apt-repository -y ppa:graphics-drivers
-apt-get -y update
-apt-get -y install nvidia-375
-
-# Setup CUDA 8
+# Setup CUDA 8 / Nvidia375 Drivers
 mkdir /cuda/
 cd /cuda/
 wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb
@@ -56,6 +55,18 @@ make -j8
 chown -R www-data /ethminer/
 chmod -R 755 /ethminer/
 
+# Extract EWBF
+mkdir /ewbf/
+mv /nvezos/installpayload/miners/ewbf/* /ewbf/
+chown -R www-data /ewbf/
+chmod -R 755 /ewbf/
+
+# Extract Claymore
+mkdir /claymore/
+mv /nvezos/installpayload/miners/claymore/* /claymore/
+chown -R www-data /claymore/
+chmod -R 755 /claymore/
+
 # Move PHP/WebUI files into place
 /bin/cp -rf /nvezos/installpayload/html/ /var/www/
 rm -rf /var/www/html/index.html
@@ -68,22 +79,40 @@ chmod 755 /etc/crontab
 
 # Setup miner services
 useradd -m gpuservice
-/bin/cp /nvezos/installpayload/services/ethminer.service /etc/systemd/system/
-/bin/cp /nvezos/installpayload/services/etcminer.service /etc/systemd/system/
-/bin/cp /nvezos/installpayload/services/expminer.service /etc/systemd/system/
-/bin/cp /nvezos/installpayload/services/musicminer.service /etc/systemd/system/
-/bin/cp /nvezos/installpayload/services/ubiqminer.service /etc/systemd/system/
+/bin/cp /nvezos/installpayload/services/miner1.service /etc/systemd/system/
+/bin/cp /nvezos/installpayload/services/miner2.service /etc/systemd/system/
+/bin/cp /nvezos/installpayload/services/miner3.service /etc/systemd/system/
+/bin/cp /nvezos/installpayload/services/miner4.service /etc/systemd/system/
+/bin/cp /nvezos/installpayload/services/miner5.service /etc/systemd/system/
+/bin/cp /nvezos/installpayload/services/miner6.service /etc/systemd/system/
+/bin/cp /nvezos/installpayload/services/miner7.service /etc/systemd/system/
+/bin/cp /nvezos/installpayload/services/miner8.service /etc/systemd/system/
+/bin/cp /nvezos/installpayload/services/miner9.service /etc/systemd/system/
+/bin/cp /nvezos/installpayload/services/miner10.service /etc/systemd/system/
+/bin/cp /nvezos/installpayload/services/minerdev.service /etc/systemd/system/
+/bin/cp /nvezos/installpayload/services/minerdevmulti.service /etc/systemd/system/
 /bin/cp /nvezos/installpayload/services/gpuoc.service /etc/systemd/system/
 /bin/cp /nvezos/installpayload/services/gpupl.service /etc/systemd/system/
 /bin/cp /nvezos/installpayload/services/gpufan.service /etc/systemd/system/
-chmod 755 /etc/systemd/system/ethminer.service
-chmod 755 /etc/systemd/system/etcminer.service
-chmod 755 /etc/systemd/system/expminer.service
-chmod 755 /etc/systemd/system/musicminer.service
-chmod 755 /etc/systemd/system/ubiqminer.service
+chmod 755 /etc/systemd/system/miner1.service
+chmod 755 /etc/systemd/system/miner2.service
+chmod 755 /etc/systemd/system/miner3.service
+chmod 755 /etc/systemd/system/miner4.service
+chmod 755 /etc/systemd/system/miner5.service
+chmod 755 /etc/systemd/system/miner6.service
+chmod 755 /etc/systemd/system/miner7.service
+chmod 755 /etc/systemd/system/miner8.service
+chmod 755 /etc/systemd/system/miner9.service
+chmod 755 /etc/systemd/system/miner10.service
+chmod 755 /etc/systemd/system/minerdev.service
+chmod 755 /etc/systemd/system/minerdevmulti.service
 chmod 755 /etc/systemd/system/gpuoc.service
 chmod 755 /etc/systemd/system/gpupl.service
 chmod 755 /etc/systemd/system/gpufan.service
+systemctl daemon-reload
+systemctl enable gpuoc.service
+systemctl enable gpupl.service
+systemctl enable gpufan.service
 systemctl daemon-reload
 
 # Make some directories/files
@@ -93,11 +122,37 @@ mkdir /nvezos/set/gpu/
 mkdir /nvezos/set/network/
 mkdir /nvezos/set/password
 mkdir /nvezos/set/status
+mkdir /nvezos/set/status/hashrate
+mkdir /nvezos/set/multimine
+mkdir /nvezos/set/miners
 touch /nvezos/set/gpu/numgpu.data
-touch /nvezos/set/status/currentservicename.set
-touch /nvezos/set/status/whatarewemining.set
-touch /nvezos/logs/miner.log
+touch /nvezos/logs/miner1.log
+touch /nvezos/logs/miner2.log
+touch /nvezos/logs/miner3.log
+touch /nvezos/logs/miner4.log
+touch /nvezos/logs/miner5.log
+touch /nvezos/logs/miner6.log
+touch /nvezos/logs/miner7.log
+touch /nvezos/logs/miner8.log
+touch /nvezos/logs/miner9.log
+touch /nvezos/logs/miner10.log
+touch /nvezos/logs/minerdev.log
 touch /nvezos/set/status/defaultuser.set
+echo 'miner1' > /nvezos/set/miners/minername1.set
+echo 'miner2' > /nvezos/set/miners/minername2.set
+echo 'miner3' > /nvezos/set/miners/minername3.set
+echo 'miner4' > /nvezos/set/miners/minername4.set
+echo 'miner5' > /nvezos/set/miners/minername5.set
+echo 'miner6' > /nvezos/set/miners/minername6.set
+echo 'miner7' > /nvezos/set/miners/minername7.set
+echo 'miner8' > /nvezos/set/miners/minername8.set
+echo 'miner9' > /nvezos/set/miners/minername9.set
+echo 'miner10' > /nvezos/set/miners/minername10.set
+echo 'checked' > /nvezos/set/multimine/switchno.set
+echo 'disabled' > /nvezos/set/multimine/multimine.set
+echo '5' > /nvezos/set/status/refreshint.set
+echo 'minerdev.log' > /nvezos/set/status/minerloglocation.set
+
 
 # Set Default WebUI Password
 echo nvezos | htpasswd -c -i /nvezos/set/password/passwords miner
@@ -106,11 +161,6 @@ echo nvezos | htpasswd -c -i /nvezos/set/password/passwords miner
 chown -R www-data /nvezos/
 chmod -R 755 /nvezos/
 
-# Setup xorg.conf
-nvidia-xconfig -a --cool-bits=31 --allow-empty-initial-configuration
-/bin/cp -rf /nvezos/installpayload/dfp0.edid /etc/X11/
-sed -i '/Option         "AllowEmptyInitialConfiguration" "True"/a    Option         "ConnectedMonitor" "DFP-0"' /etc/X11/xorg.conf
-sed -i '/Option         "ConnectedMonitor" "DFP-0"/a    Option         "CustomEDID" "DFP-0:/etc/X11/dfp0.edid"' /etc/X11/xorg.conf
 
 # Setup passwordless sudo for www-data and gpuservice
 echo "www-data  ALL=(ALL:ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)
@@ -119,8 +169,6 @@ echo "gpuservice  ALL=(ALL:ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo)
 # Cleanup
 rm -rf /nvezos/installpayload/
 rm -rf /cuda/
-mv /var/www/html/index.php /var/www/html/indexold.php
-mv /var/www/html/indexready.php /var/www/html/index.php
 
 # Install is complete - let's reboot'
 echo "Installation of NvEZOS is now complete"
