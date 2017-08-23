@@ -10,6 +10,15 @@
 <body>
 <center><h4>Activating</h4><br><br>
 <?php
+$password = $_POST['password'];
+$passwordconf = $_POST['passwordconf'];
+if ($password == $passwordconf) {
+	exec('echo "miner:'.$password.'" | sudo chpasswd');
+	echo 'Completing initialization...';
+}
+else {
+	echo 'Passwords do not match or you elected not to set password, if you intended to set a password, do it via ssh after reboot, completing initialization...';
+}
 exec('/nvezos/scripts/system/initialize.sh');
 ?>
 <br>

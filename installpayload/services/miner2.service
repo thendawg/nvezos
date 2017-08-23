@@ -1,0 +1,11 @@
+[Unit]
+Description=Miner 2
+After=network.target
+
+[Service]
+User=www-data
+ExecStart=/nvezos/scripts/miners/miner2.sh
+
+[Install]
+WantedBy=multi-user.target
+

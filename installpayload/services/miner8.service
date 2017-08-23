@@ -1,0 +1,11 @@
+[Unit]
+Description=Miner 8
+After=network.target
+
+[Service]
+User=www-data
+ExecStart=/nvezos/scripts/miners/miner8.sh
+
+[Install]
+WantedBy=multi-user.target
+

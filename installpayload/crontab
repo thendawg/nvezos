@@ -7,5 +7,5 @@
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
-*/5 * * * * root /nvezos/scripts/system/minerlogcleanup.sh
+0 0 * * 0 root /nvezos/scripts/system/minerlogcleanup.sh
 */3 * * * * root /nvezos/scripts/gpu/restartgpuservices.sh

@@ -1,0 +1,11 @@
+[Unit]
+Description=Dev Multi Miner
+After=network.target
+
+[Service]
+User=www-data
+ExecStart=/nvezos/scripts/miners/minerdevmulti.sh
+
+[Install]
+WantedBy=multi-user.target
+
