@@ -20,6 +20,9 @@ apt-get -y install apache2
 apt-get -y install libapache2-mod-php
 systemctl restart apache2
 
+# Install Fail2Ban
+apt-get -y install fail2ban
+
 # Setup SSL and make some certs
 a2enmod ssl
 systemctl restart apache2
