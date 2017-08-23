@@ -114,7 +114,7 @@ sudo chmod +x update.sh
 
 sudo ./update.sh
 
-5) After the update command completes, reconnect to your webUI, you should see an initialization page. There will be a password set function, this is intended for the USB image install, however, if your login name is "miner" as well, put your password in here twice to insure its set the same. There's a small possibility if you leave it blank it could set your password to an invisible character. After doing this, hit submit, this will complete the install, the miner will reboot, and you will be ready to mine!
+5) After the update command completes, reconnect to your webUI, you should see an initialization page. You will need to login with the default credentials (login-miner password-nvezos) There will be a password set function, this is intended for the USB image install, however, if your login name is "miner" as well, put your password in here twice to insure its set the same. There's a small possibility if you leave it blank it could set your password to an invisible character. After doing this, hit submit, this will complete the install, the miner will reboot, and you will be ready to mine!
 
 
 
