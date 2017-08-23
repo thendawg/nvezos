@@ -9,6 +9,7 @@ This software is available for free use, however, donations are always appreciat
 MEW Address - 0x3d454b7b858335805f83D30842d9f0fACd50e545
 
 **PREBUILT ISO V1.02 AVAILABLE AT NVEZOS.COM**
+
 **UPDATE INSTRUCTIONS ARE AT THE BOTTOM (BELOW THE LEGACY INSTRUCTIONS)**
 
 **LEGACY INSTALLATION INSTRUCTIONS**
@@ -88,6 +89,7 @@ After applying overclocking and then rebooting the system you will notice the OC
 8) Be sure to remove the USB drive used for installation before the system boots again, it should now boot into the OS.
 
 **UPDATE INSTRUCTIONS**
+
 1) SSH to miner via a utility like putty or mobaxterm. You can download putty here - https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
 2) To connect with putty, simply enter your miner IP and hit open, you will be prompted with an RSA validation, hit yes, then login to the ssh session with the account you setup during install.
