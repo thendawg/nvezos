@@ -92,6 +92,8 @@ After applying overclocking and then rebooting the system you will notice the OC
 
 **UPDATE INSTRUCTIONS**
 
+Please note the update will not change your driver version, so if you are on V1.01 and are using the nvidia-384 driver, you will need to reinstall via ISO if you wish to go back to the nvidia-375 driver which tends to handle overclocking better.
+
 1) SSH to miner via a utility like putty or mobaxterm. You can download putty here - https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
 2) To connect with putty, simply enter your miner IP and hit open, you will be prompted with an RSA validation, hit yes, then login to the ssh session with the account you setup during install.
