@@ -99,6 +99,9 @@ echo 'minerdev.log' > /nvezos/set/status/minerloglocation.set
 chown -R www-data /nvezos/
 chmod -R 755 /nvezos/
 
+# Set Password
+echo nvezos | htpasswd -c -i /nvezos/set/password/passwords miner
+
 # Move PHP/WebUI files into place
 /bin/cp -rf /nvezos/installpayload/html/ /var/www/
 rm -rf /var/www/html/index.html
