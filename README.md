@@ -1,14 +1,14 @@
 # nvezos
-Welcome to NvEZOS V1.02! This github has now been updated and will stay on the same track as the ISO that is released. The easiest way to install NvEZOS is via ISO, which is available on our website at https://www.nvezos.com/download 
+Welcome to NvEZOS V1.03! This github has now been updated and will stay on the same track as the ISO that is released. The easiest way to install NvEZOS is via ISO, which is available on our website at https://www.nvezos.com/download 
 
-NvEZOS is an nVidia GPU Mining OS based on Ubuntu-GNOME 16.04.3 LTS. It is configurable completely from webUI powered by apache2 and PHP7. It features the latest genoil CUDA ethminer, EWBF (Equihash miner), and Claymore (Useful for dual mining). The WebUI provides an easy interface to switch between currencies you're currently mining, check hashrate, and even configure network and overclocking settings! V1 also introduces Multi-Mine, and 16 GPU support! You can get more info here - https://nvezos.com/documentation
+NvEZOS is an nVidia GPU Mining OS based on Ubuntu-GNOME 16.04.2 LTS. It is configurable completely from webUI powered by apache2 and PHP7. It features the latest genoil CUDA ethminer, EWBF (Equihash miner), and Claymore (Useful for dual mining). The WebUI provides an easy interface to switch between currencies you're currently mining, check hashrate, and even configure network and overclocking settings! V1 also introduces Multi-Mine, and 16 GPU support! You can get more info here - https://nvezos.com/documentation
 
 There's also more info on our subreddit https://www.reddit.com/r/nvezos
 
 This software is available for free use, however, donations are always appreciated!
 MEW Address - 0x3d454b7b858335805f83D30842d9f0fACd50e545
 
-**PREBUILT ISO V1.02 AVAILABLE AT NVEZOS.COM**
+**PREBUILT ISO V1.03 AVAILABLE AT NVEZOS.COM**
 
 Release Notes https://nvezos.com/update-notes
 
