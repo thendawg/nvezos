@@ -8,4 +8,4 @@ SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 0 0 * * 0 root /nvezos/scripts/system/minerlogcleanup.sh
-*/3 * * * * root /nvezos/scripts/gpu/restartgpuservices.sh
+* * * * * root /nvezos/scripts/gpu/restartgpuservices.sh
