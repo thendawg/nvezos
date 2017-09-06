@@ -1,11 +1,7 @@
 #!/bin/bash
 
 # Wait for system to finish booting
-sleep 25
-
-# Install SSH Daemon for management first
-apt-get -y install openssh-server
-apt-get -y install fail2ban
+sleep 50
 
 # Setup SSL and make some certs
 a2enmod ssl
@@ -100,6 +96,12 @@ echo 'checked' > /nvezos/set/multimine/switchno.set
 echo 'disabled' > /nvezos/set/multimine/multimine.set
 echo '5' > /nvezos/set/status/refreshint.set
 echo 'minerdev.log' > /nvezos/set/status/minerloglocation.set
+
+sleep 10
+
+# Install SSH Daemon for management
+apt-get -y install openssh-server
+apt-get -y install fail2ban
 
 # Move EDID Into Place
 /bin/cp -rf /nvezos/installpayload/dfp0.edid /etc/X11/
