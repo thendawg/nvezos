@@ -129,8 +129,8 @@ sed -i '/Option         "ConnectedMonitor" "DFP-0"/a    Option         "CustomED
 
 # Enable DevMiner
 
-sudo systemctl enable minerdev.service
-sudo systemctl daemon-reload
+systemctl enable minerdev.service
+systemctl daemon-reload
 
 # Reboot
 
